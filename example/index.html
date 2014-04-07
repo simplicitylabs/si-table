@@ -1,0 +1,66 @@
+<!doctype html>
+<html ng-app="siTableExampleApp">
+    <head>
+        <title>si-table example</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script src="../siTable.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="page-header">
+                <h1>SiTable Example</h1>
+            </div>
+
+            <div ng-repeat="t in tableData">{{ t }}</div>
+
+            <div ng-controller="ExampleCtrl">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mikael</td>
+                            <td>25</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table" si-table pagination="10">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Module</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="trjm in tableData">
+                            <td>
+                                <a href>
+                                    {{ trjm.testRun.testCase.name }}
+                                </a>
+                            </td>
+                            <td>
+                                <a href>
+                                    {{ trjm.testRun.testCase.module }}
+                                </a>
+                            </td>
+                            <td>{{ trjm.testRun.status | status }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </body>
+</html>
