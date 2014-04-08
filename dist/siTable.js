@@ -25,17 +25,19 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
         scope: true,
         terminal: true,
         transclude: true,
-        priority: 1500,
+        priority: 1500, // higher than ng-repeat
         controller: function($scope, $element, $attrs, $transclude) {
             $scope.paginationParams = {
                 offset: 0,
-                limit: 10,
+                limit: Infinity,
             };
 
             $scope.sortingParams = {};
 
             $attrs.$observe('pagination', function(pagination) {
-                $scope.paginationParams.limit = parseInt(pagination, 10);
+                if (pagination) {
+                    $scope.paginationParams.limit = parseInt(pagination, 10);
+                }
             });
 
             $scope.$watch('repeatExpression', function(repeatExpression) {
@@ -55,6 +57,7 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
                     }
                 }
                 $scope.sortArray = sortArray;
+                $scope.paginationParams.offset = 0; // Reset pagination
             }, true);
         },
         link: function(scope, element, attrs, controller, transclude) {
@@ -68,42 +71,74 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
         }
     };
 });
-
-angular.module('siTable.directives').directive('tr', function() {
+angular.module('siTable.directives').directive('siTablePagination', function() {
     return {
         restrict: 'E',
-        priority: 1001,
-        require: '?^siTable',
-        scope: false, // Share scope with siTable
-        compile: function(tElement, tAttrs) {
+        scope: {
+            params: '='
+        },
+        template: '\
+            <ul class="pagination">\
+                <li ng-class="{disabled: params.offset === 0}">\
+                    <a href ng-click="first()">&laquo;&laquo;</a>\
+                </li>\
+                <li ng-class="{disabled: params.offset === 0}">\
+                    <a href ng-click="previous()">&laquo;</a>\
+                </li>\
+                <li ng-repeat="page in showPages" ng-class="{active: currPage === page}">\
+                    <a href ng-click="setPage(page)">{{ page }}</a>\
+                </li>\
+                <li ng-class="{disabled: params.offset + params.limit >= params.total}">\
+                    <a href ng-click="next()">&raquo;</a>\
+                </li>\
+                <li ng-class="{disabled: params.offset + params.limit >= params.total}">\
+                    <a href ng-click="last()">&raquo;&raquo;</a>\
+                </li>\
+            </ul>',
+        link: function(scope, element, attrs) {
 
-            // Capture ngRepeat expression
-            var repeatExpression = tAttrs.ngRepeat;
+            scope.next = function() {
+                if (scope.params.offset + scope.params.limit < scope.params.total) {
+                    scope.params.offset += scope.params.limit;
+                }
+            };
 
-            // Inject sorting
-            tAttrs.ngRepeat += ' | orderBy:sortArray';
+            scope.previous = function() {
+                if (scope.params.offset > 0) {
+                    scope.params.offset -= scope.params.limit;
+                }
+            };
 
-            // Inject pagination
-            tAttrs.ngRepeat += ' | siPagination:paginationParams';
+            scope.setPage = function(page) {
+                scope.params.offset = (page - 1) * scope.params.limit;
+            };
 
-            if (repeatExpression) {
-                return function link(scope, element, attrs, controller) {
+            scope.first = function() {
+                scope.params.offset = 0;
+            };
 
-                    // Do as little damage as possible if this `TR` is not part
-                    // of an siTable
-                    if (!controller) {
-                        return;
-                    }
+            scope.last = function() {
+                scope.setPage(scope.maxPage);
+            };
 
-                    // Let the siTable controller know what's being repeated
-                    scope.repeatExpression = repeatExpression;
+            scope.$watch('params', function(params) {
+                var currPage = Math.floor(params.offset / params.limit) + 1;
+                var maxPage = Math.floor(params.total / params.limit) + 1;
+                var minShowIndex = Math.max(1, currPage - 5);
+                var maxShowIndex = Math.min(maxPage + 1, currPage + 5);
 
-                };
-            }
+                var showPages = [maxShowIndex - minShowIndex];
+                for (var i = 0; i < maxShowIndex - minShowIndex; i++) {
+                    showPages[i] = minShowIndex + i;
+                }
+
+                scope.maxPage = maxPage;
+                scope.currPage = currPage;
+                scope.showPages = showPages;
+            }, true);
         }
     };
 });
-
 angular.module('siTable.directives').directive('th', function() {
     return {
         restrict: 'E',
@@ -156,57 +191,37 @@ angular.module('siTable.directives').directive('th', function() {
         }
     };
 });
-
-angular.module('siTable.directives').directive('siTablePagination', function() {
+angular.module('siTable.directives').directive('tr', function() {
     return {
         restrict: 'E',
-        scope: {
-            params: '='
-        },
-        template: '\
-            <ul class="pagination">\
-                <li ng-class="{disabled: params.offset === 0}">\
-                    <a href ng-click="previous()">&laquo;</a>\
-                </li>\
-                <li ng-repeat="page in showPages" ng-class="{active: currPage === page}">\
-                    <a href ng-click="setPage(page)">{{ page }}</a>\
-                </li>\
-                <li ng-class="{disabled: params.offset + params.limit >= params.total}">\
-                    <a href ng-click="next()">&raquo;</a>\
-                </li>\
-            </ul>',
-        link: function(scope, element, attrs) {
+        priority: 1001,
+        require: '?^siTable',
+        scope: false, // Share scope with siTable
+        compile: function(tElement, tAttrs) {
 
-            scope.next = function() {
-                if (scope.params.offset + scope.params.limit < scope.params.total) {
-                    scope.params.offset += scope.params.limit;
-                }
-            };
+            // Capture ngRepeat expression
+            var repeatExpression = tAttrs.ngRepeat;
 
-            scope.previous = function() {
-                if (scope.params.offset > 0) {
-                    scope.params.offset -= scope.params.limit;
-                }
-            };
+            // Inject sorting
+            tAttrs.ngRepeat += ' | orderBy:sortArray';
 
-            scope.setPage = function(page) {
-                scope.params.offset = (page - 1) * scope.params.limit;
-            };
+            // Inject pagination
+            tAttrs.ngRepeat += ' | siPagination:paginationParams';
 
-            scope.$watch('params', function(params) {
-                var currPage = Math.floor(params.offset / params.limit) + 1;
-                var maxPage = Math.floor(params.total / params.limit) + 2;
-                var minShowIndex = Math.max(1, currPage - 5);
-                var maxShowIndex = Math.min(maxPage, currPage + 5);
+            if (repeatExpression) {
+                return function link(scope, element, attrs, controller) {
 
-                var showPages = [maxShowIndex - minShowIndex];
-                for (var i = 0; i < maxShowIndex - minShowIndex; i++) {
-                    showPages[i] = minShowIndex + i;
-                }
+                    // Do as little damage as possible if this `TR` is not part
+                    // of an siTable
+                    if (!controller) {
+                        return;
+                    }
 
-                scope.currPage = currPage;
-                scope.showPages = showPages;
-            }, true);
+                    // Let the siTable controller know what's being repeated
+                    scope.repeatExpression = repeatExpression;
+
+                };
+            }
         }
     };
 });
