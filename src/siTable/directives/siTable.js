@@ -26,10 +26,15 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
                 }
             });
 
-            $scope.$watch('repeatExpression', function(repeatExpression) {
+            $scope.$watch(function() {
+                var repeatExpression = $scope.repeatExpression;
+                if (!repeatExpression) {
+                    return;
+                }
                 var match = repeatExpression.match(/^\s*(.+)\s+in\s+(.*)\s*$/);
                 var rhs = match[2];
-                items = $scope.$eval(rhs);
+                return $scope.$eval(rhs);
+            }, function(items) {
                 $scope.paginationParams.total = items.length;
             }, true);
 
