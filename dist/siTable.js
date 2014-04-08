@@ -30,12 +30,24 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
                 limit: $attrs.pagination ? parseInt($attrs.pagination, 10) : 10,
             };
 
+            $scope.sortingParams = [];
+
+            var i, elem;
+
             // Compile/replace all TR element, to get this scope as their parent
             // scope so that we can set up watches.
             var trs = $element.find('tr');
-            for (var i = 0; i < trs.length; i++) {
-                var elem = angular.element(trs[i]);
+            for (i = 0; i < trs.length; i++) {
+                elem = angular.element(trs[i]);
                 elem.attr('pagination-params', 'paginationParams');
+                elem.replaceWith($compile(elem)($scope));
+            }
+
+            // Compile/replace all TH elements
+            var ths = $element.find('th');
+            for (i = 0; i < ths.length; i++) {
+                elem = angular.element(ths[i]);
+                elem.attr('sorting-params', 'sortingParams');
                 elem.replaceWith($compile(elem)($scope));
             }
         },
@@ -52,6 +64,10 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
                     scope.paginationParams.total = items.length;
                 }, true);
 
+                scope.$watch('sortingParams', function(sortingParams) {
+                    console.log(sortingParams);
+                }, true);
+
             };
         }
     };
@@ -62,7 +78,8 @@ angular.module('siTable.directives').directive('tr', function() {
         restrict: 'E',
         priority: 1001,
         scope: {
-            paginationParams: '='
+            paginationParams: '=',
+            sortingParams: '='
         },
         compile: function(tElement, tAttrs) {
 
@@ -72,9 +89,46 @@ angular.module('siTable.directives').directive('tr', function() {
             // Inject pagination
             tAttrs.ngRepeat += ' | siPagination:paginationParams';
 
+            // Inject sorting
+            tAttrs.ngRepeat += ' | orderBy:sortingParams';
+
             if (repeatExpression) {
                 return function link(scope, element, attrs) {
                     scope.$parent.$parent.repeatExpression = repeatExpression;
+                };
+            }
+        }
+    };
+});
+
+angular.module('siTable.directives').directive('th', function() {
+    return {
+        restrict: 'E',
+        scope: true,
+        // priority: 1041,
+        compile: function(tElement, tAttrs) {
+            var sortBy = tAttrs.sortBy;
+
+            if (sortBy) {
+                tAttrs.ngClass = '{"bg-danger": true}';
+                tAttrs.hei = 'hopp';
+
+                tElement.bind('click', function() {
+                    console.log('click');
+                });
+
+                tElement.attr('ngClick', 'sort');
+
+                console.log(tElement);
+
+                return function link(scope, element, attrs) {
+
+                    scope.sort = function() {
+                        console.log('sorting by ' + sortBy);
+                    };
+
+                    scope.$parent.sortingParams = [sortBy];
+
                 };
             }
         }
@@ -136,7 +190,6 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
 });
 angular.module('siTable.filters').filter('siPagination', function() {
     return function(input, params) {
-        console.log(params);
         if (!params) {
             return input;
         }

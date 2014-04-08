@@ -37,6 +37,7 @@
                 <table class="table" si-table pagination="10">
                     <thead>
                         <tr>
+                            <th sort-by="id">ID</th>
                             <th>Name</th>
                             <th>Module</th>
                             <th>Status</th>
@@ -44,6 +45,7 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="trjm in tableData">
+                            <td>{{ trjm.id }}</td>
                             <td>
                                 <a href>
                                     {{ trjm.testRun.testCase.name }}
