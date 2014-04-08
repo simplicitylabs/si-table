@@ -1,8 +1,38 @@
-angular.module('siTable.directives').directive('th', function() {
+angular.module('siTable.directives').directive('th', function($compile) {
+    var condTemplate = '\
+        <a href="" ng-class="{\
+                \'sort-asc\': sortingParams[sortBy] === \'asc\',\
+                \'sort-desc\': sortingParams[sortBy] === \'desc\'\
+            }">\
+        </a>\
+        <span class="sort-caret sort-asc"\
+                ng-if="sortingParams[sortBy] === \'asc\'">&#9660;</span>\
+        <span class="sort-caret sort-desc"\
+                ng-if="sortingParams[sortBy] === \'desc\'">&#9650;</span>\
+    ';
     return {
         restrict: 'E',
         require: '?^siTable',
-        scope: false,
+        transclude: true,
+        scope: true,
+        controller: function($scope, $element, $attrs, $transclude) {
+
+            // Transclude and add an <a> only if the header is sortable
+            $transclude(function(clone) {
+                if ($scope.sortingParams && $attrs.sortBy) {
+                    $element.append($compile(condTemplate)($scope));
+                    $element.find('a').append(clone);
+                } else {
+                    $element.append(clone);
+                }
+            });
+
+            // Copy the sortBy attribute to scope
+            $attrs.$observe('sortBy', function(sortBy) {
+                $scope.sortBy = sortBy;
+            });
+
+        },
         link: function(scope, element, attrs, controller) {
 
             // Do as little damage as possible if this `TH` is not part of an
@@ -27,25 +57,6 @@ angular.module('siTable.directives').directive('th', function() {
                     scope.sortingParams[sortBy] = 'asc';
                 }
                 scope.$apply();
-            });
-
-            // Add classes to the `TH` according to its state
-            scope.$watch(function() {
-                if (!scope.sortingParams || !attrs.sortBy) {
-                    return;
-                }
-                return scope.sortingParams[attrs.sortBy];
-            }, function(dir) {
-                if (dir === 'asc') {
-                    element.removeClass('sort-desc');
-                    element.addClass('sort-asc');
-                } else if (dir === 'desc') {
-                    element.addClass('sort-desc');
-                    element.removeClass('sort-asc');
-                } else {
-                    element.removeClass('sort-desc');
-                    element.removeClass('sort-asc');
-                }
             });
         }
     };

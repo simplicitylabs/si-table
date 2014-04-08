@@ -24,26 +24,31 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
             </ul>',
         link: function(scope, element, attrs) {
 
+            // Go to next page
             scope.next = function() {
                 if (scope.params.offset + scope.params.limit < scope.params.total) {
                     scope.params.offset += scope.params.limit;
                 }
             };
 
+            // Go to previous page
             scope.previous = function() {
                 if (scope.params.offset > 0) {
                     scope.params.offset -= scope.params.limit;
                 }
             };
 
+            // Go to specific page
             scope.setPage = function(page) {
                 scope.params.offset = (page - 1) * scope.params.limit;
             };
 
+            // Go to first page
             scope.first = function() {
                 scope.params.offset = 0;
             };
 
+            // Go to last page
             scope.last = function() {
                 scope.setPage(scope.maxPage);
             };
