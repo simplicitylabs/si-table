@@ -8,6 +8,7 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
         controller: function($scope, $element, $attrs, $transclude) {
             $scope.paginationParams = {
                 offset: 0,
+                maxShowPages: 10,
                 limit: Infinity,
             };
 
@@ -16,6 +17,12 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
             $attrs.$observe('pagination', function(pagination) {
                 if (pagination) {
                     $scope.paginationParams.limit = parseInt(pagination, 10);
+                }
+            });
+
+            $attrs.$observe('paginationLength', function(paginationLength) {
+                if (paginationLength) {
+                    $scope.paginationParams.maxShowPages = paginationLength;
                 }
             });
 

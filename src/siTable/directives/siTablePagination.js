@@ -48,19 +48,35 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
                 scope.setPage(scope.maxPage);
             };
 
+            // Create a sliding window of pages around the current page. There
+            // should always be `params.maxShowPages` page numbers showing.
             scope.$watch('params', function(params) {
-                var currPage = Math.floor(params.offset / params.limit) + 1;
-                var maxPage = Math.floor(params.total / params.limit) + 1;
-                var minShowIndex = Math.max(1, currPage - 5);
-                var maxShowIndex = Math.min(maxPage + 1, currPage + 5);
+                var curr = Math.floor(params.offset / params.limit),
+                    max = Math.floor(params.total / params.limit),
+                    windowSide = Math.floor(params.maxShowPages / 2),
+                    windowMin, windowMax;
 
-                var showPages = [maxShowIndex - minShowIndex];
-                for (var i = 0; i < maxShowIndex - minShowIndex; i++) {
-                    showPages[i] = minShowIndex + i;
+                if (curr - windowSide < 0) {
+                    windowMin = 0;
+                    windowMax = 2 * windowSide;
+                } else if (curr + windowSide > max) {
+                    windowMax = max;
+                    windowMin = max - 2 * windowSide;
+                } else {
+                    windowMin = curr - windowSide;
+                    windowMax = curr + windowSide;
                 }
 
-                scope.maxPage = maxPage;
-                scope.currPage = currPage;
+                windowMin = Math.max(0, windowMin);
+                windowMax = Math.min(max + 1, windowMax);
+
+                var showPages = [windowMax - windowMin];
+                for (var i = 0; i <= windowMax - windowMin; i++) {
+                    showPages[i] = windowMin + i + 1;
+                }
+
+                scope.maxPage = max + 1;
+                scope.currPage = curr + 1;
                 scope.showPages = showPages;
             }, true);
         }
