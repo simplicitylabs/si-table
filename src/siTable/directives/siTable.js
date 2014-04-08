@@ -28,17 +28,9 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
                 }
             });
 
-            $scope.$watch(function() {
-                var repeatExpression = $scope.repeatExpression;
-                if (!repeatExpression) {
-                    return;
-                }
-                var match = repeatExpression.match(/^\s*(.+)\s+in\s+(.*)\s*$/);
-                var rhs = match[2];
-                return $scope.$eval(rhs);
-            }, function(items) {
-                $scope.paginationParams.total = items.length;
-            }, true);
+            $scope.$watch('paginationParams.total', function() {
+                $scope.paginationParams.offset = 0;
+            });
 
             $scope.$watch('sortingParams', function(sortingParams) {
                 var sortArray = [];

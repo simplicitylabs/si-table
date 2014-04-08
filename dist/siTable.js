@@ -49,17 +49,9 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
                 }
             });
 
-            $scope.$watch(function() {
-                var repeatExpression = $scope.repeatExpression;
-                if (!repeatExpression) {
-                    return;
-                }
-                var match = repeatExpression.match(/^\s*(.+)\s+in\s+(.*)\s*$/);
-                var rhs = match[2];
-                return $scope.$eval(rhs);
-            }, function(items) {
-                $scope.paginationParams.total = items.length;
-            }, true);
+            $scope.$watch('paginationParams.total', function() {
+                $scope.paginationParams.offset = 0;
+            });
 
             $scope.$watch('sortingParams', function(sortingParams) {
                 var sortArray = [];
@@ -265,11 +257,22 @@ angular.module('siTable.directives').directive('tr', function() {
         }
     };
 });
+/**
+ * Pagination filter
+ *
+ * Responsible for making sure we display only the items which the pagination
+ * params dictate.
+ *
+ * NOTE: The filter also *writes* to `params.total`, sniffing out the total
+ * numbers of items before pagination, which is useful for generating the
+ * pagination directive.
+ */
 angular.module('siTable.filters').filter('siPagination', function() {
     return function(input, params) {
         if (!params) {
             return input;
         }
+        params.total = input.length;
         return input.slice(params.offset, params.offset + params.limit);
     };
 });
