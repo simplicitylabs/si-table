@@ -1,6 +1,6 @@
 angular.module('siTable.directives').directive('th', function($compile) {
     var condTemplate = '\
-        <a href="" ng-class="{\
+        <a href="" class="sort" ng-class="{\
                 \'sort-asc\': sortingParams[sortBy] === \'asc\',\
                 \'sort-desc\': sortingParams[sortBy] === \'desc\'\
             }">\
