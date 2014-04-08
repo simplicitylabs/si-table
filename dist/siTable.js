@@ -94,26 +94,30 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
         template: '\
             <ul class="pagination">\
                 <li ng-class="{disabled: params.offset === 0}">\
-                    <a href ng-click="first()">&laquo;&laquo;</a>\
+                    <a href ng-click="first()">First</a>\
                 </li>\
                 <li ng-class="{disabled: params.offset === 0}">\
-                    <a href ng-click="previous()">&laquo;</a>\
+                    <a href ng-click="previous()">Previous</a>\
                 </li>\
-                <li ng-repeat="page in showPages" ng-class="{active: currPage === page}">\
+                <li ng-repeat="page in showPages"\
+                        ng-class="{active: currPage === page}">\
                     <a href ng-click="setPage(page)">{{ page }}</a>\
                 </li>\
-                <li ng-class="{disabled: params.offset + params.limit >= params.total}">\
-                    <a href ng-click="next()">&raquo;</a>\
+                <li ng-class="{disabled:\
+                            params.offset + params.limit >= params.total}">\
+                    <a href ng-click="next()">Next</a>\
                 </li>\
-                <li ng-class="{disabled: params.offset + params.limit >= params.total}">\
-                    <a href ng-click="last()">&raquo;&raquo;</a>\
+                <li ng-class="{disabled:\
+                        params.offset + params.limit >= params.total}">\
+                    <a href ng-click="last()">Last</a>\
                 </li>\
             </ul>',
         link: function(scope, element, attrs) {
 
             // Go to next page
             scope.next = function() {
-                if (scope.params.offset + scope.params.limit < scope.params.total) {
+                if (scope.params.offset + scope.params.limit <
+                            scope.params.total) {
                     scope.params.offset += scope.params.limit;
                 }
             };
@@ -144,27 +148,17 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
             // should always be `params.maxShowPages` page numbers showing.
             scope.$watch('params', function(params) {
                 var curr = Math.floor(params.offset / params.limit),
-                    max = Math.floor(params.total / params.limit),
-                    windowSide = Math.floor(params.maxShowPages / 2),
-                    windowMin, windowMax;
+                    max = Math.ceil(params.total / params.limit) - 1;
 
-                if (curr - windowSide < 0) {
-                    windowMin = 0;
-                    windowMax = 2 * windowSide;
-                } else if (curr + windowSide > max) {
-                    windowMax = max;
-                    windowMin = max - 2 * windowSide;
-                } else {
-                    windowMin = curr - windowSide;
-                    windowMax = curr + windowSide;
-                }
+                var minIndex = Math.max(0, Math.min(
+                        curr - Math.ceil(params.maxShowPages / 2),
+                        max - params.maxShowPages + 1));
 
-                windowMin = Math.max(0, windowMin);
-                windowMax = Math.min(max + 1, windowMax);
-
-                var showPages = [windowMax - windowMin];
-                for (var i = 0; i <= windowMax - windowMin; i++) {
-                    showPages[i] = windowMin + i + 1;
+                var showPages = [];
+                for (var i = minIndex, count = 0; i <= max &&
+                        count < params.maxShowPages; count++) {
+                    showPages.push(i + 1);
+                    i++;
                 }
 
                 scope.maxPage = max + 1;
