@@ -1,6 +1,17 @@
 {
-  "name": "sitable",
-  "version": "0.0.0",
+  "name": "siTable",
+  "version": "0.0.1-alpha",
+  "main": "dist/siTable.js",
+  "description": "Simple table directive for Angular, with pagination and sorting",
+  "keywords": [
+    "angular",
+    "table"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Mikael Berg",
+    "email": "miberg@silabs.com" 
+  },
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
