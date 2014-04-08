@@ -1,34 +1,28 @@
+/**
+ * Table Row Directive
+ *
+ * This replaces all TR elements, which is necessary to make the API as non-
+ * intrusive as possible. It looks for an `ngRepeat` attribute, then adds
+ * sorting and pagination.
+ *
+ * @TODO: This might interfer with trs which should not be tampered with!!
+ */
 angular.module('siTable.directives').directive('tr', function() {
     return {
         restrict: 'E',
         priority: 1001,
         require: '?^siTable',
-        scope: false, // Share scope with siTable
         compile: function(tElement, tAttrs) {
 
-            // Capture ngRepeat expression
-            var repeatExpression = tAttrs.ngRepeat;
+            if (!tAttrs.ngRepeat) {
+                return;
+            }
 
             // Inject sorting
             tAttrs.ngRepeat += ' | orderBy:sortArray';
 
             // Inject pagination
             tAttrs.ngRepeat += ' | siPagination:paginationParams';
-
-            if (repeatExpression) {
-                return function link(scope, element, attrs, controller) {
-
-                    // Do as little damage as possible if this `TR` is not part
-                    // of an siTable
-                    if (!controller) {
-                        return;
-                    }
-
-                    // Let the siTable controller know what's being repeated
-                    scope.repeatExpression = repeatExpression;
-
-                };
-            }
         }
     };
 });

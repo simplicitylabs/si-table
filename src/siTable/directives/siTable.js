@@ -1,3 +1,8 @@
+/**
+ * SiTable (main) Directive
+ *
+ * Transforms boring tables to a bit cooler ones.
+ */
 angular.module('siTable.directives').directive('siTable', function($compile) {
     return {
         restrict: 'A',

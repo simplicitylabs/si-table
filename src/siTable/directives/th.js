@@ -1,3 +1,11 @@
+/**
+ * Table Header Directive
+ *
+ * Add sorting interface to TH elements which have the `sortBy` attribute on
+ * them.
+ *
+ * @TODO: Could this be done with simply a `sortBy` attribute directive?
+ */
 angular.module('siTable.directives').directive('th', function($compile) {
     var condTemplate = '\
         <a href="" class="sort" ng-class="{\

@@ -19,6 +19,11 @@ angular.module('siTable',
         'siTable.directives',
         'siTable.filters',
     ]);
+/**
+ * SiTable (main) Directive
+ *
+ * Transforms boring tables to a bit cooler ones.
+ */
 angular.module('siTable.directives').directive('siTable', function($compile) {
     return {
         restrict: 'A',
@@ -77,6 +82,11 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
         }
     };
 });
+/**
+ * Pagination Directive
+ *
+ * This is injected below siTables and renders a pagination list.
+ */
 angular.module('siTable.directives').directive('siTablePagination', function() {
     return {
         restrict: 'E',
@@ -160,6 +170,14 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
         }
     };
 });
+/**
+ * Table Header Directive
+ *
+ * Add sorting interface to TH elements which have the `sortBy` attribute on
+ * them.
+ *
+ * @TODO: Could this be done with simply a `sortBy` attribute directive?
+ */
 angular.module('siTable.directives').directive('th', function($compile) {
     var condTemplate = '\
         <a href="" class="sort" ng-class="{\
@@ -223,37 +241,31 @@ angular.module('siTable.directives').directive('th', function($compile) {
         }
     };
 });
+/**
+ * Table Row Directive
+ *
+ * This replaces all TR elements, which is necessary to make the API as non-
+ * intrusive as possible. It looks for an `ngRepeat` attribute, then adds
+ * sorting and pagination.
+ *
+ * @TODO: This might interfer with trs which should not be tampered with!!
+ */
 angular.module('siTable.directives').directive('tr', function() {
     return {
         restrict: 'E',
         priority: 1001,
         require: '?^siTable',
-        scope: false, // Share scope with siTable
         compile: function(tElement, tAttrs) {
 
-            // Capture ngRepeat expression
-            var repeatExpression = tAttrs.ngRepeat;
+            if (!tAttrs.ngRepeat) {
+                return;
+            }
 
             // Inject sorting
             tAttrs.ngRepeat += ' | orderBy:sortArray';
 
             // Inject pagination
             tAttrs.ngRepeat += ' | siPagination:paginationParams';
-
-            if (repeatExpression) {
-                return function link(scope, element, attrs, controller) {
-
-                    // Do as little damage as possible if this `TR` is not part
-                    // of an siTable
-                    if (!controller) {
-                        return;
-                    }
-
-                    // Let the siTable controller know what's being repeated
-                    scope.repeatExpression = repeatExpression;
-
-                };
-            }
         }
     };
 });

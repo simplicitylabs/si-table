@@ -1,3 +1,8 @@
+/**
+ * Pagination Directive
+ *
+ * This is injected below siTables and renders a pagination list.
+ */
 angular.module('siTable.directives').directive('siTablePagination', function() {
     return {
         restrict: 'E',
