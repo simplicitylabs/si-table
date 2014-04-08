@@ -22,6 +22,10 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
                 }
             });
 
+            attrs.$observe('pagination', function(pagination) {
+                scope.paginationParams.limit = pagination;
+            });
+
             scope.$watch('repeatExpression', function(repeatExpression) {
                 var match = repeatExpression.match(/^\s*(.+)\s+in\s+(.*)\s*$/);
                 var rhs = match[2];
@@ -54,11 +58,11 @@ angular.module('siTable.directives').directive('tr', function() {
             // Capture ngRepeat expression
             var repeatExpression = tAttrs.ngRepeat;
 
-            // Inject pagination
-            tAttrs.ngRepeat += ' | siPagination:paginationParams';
-
             // Inject sorting
             tAttrs.ngRepeat += ' | orderBy:sortArray';
+
+            // Inject pagination
+            tAttrs.ngRepeat += ' | siPagination:paginationParams';
 
             if (repeatExpression) {
                 return function link(scope, element, attrs) {
@@ -91,7 +95,12 @@ angular.module('siTable.directives').directive('th', function() {
                 scope.$apply();
             });
 
-            scope.$watch('sortingParams.' + attrs.sortBy, function(dir) {
+            scope.$watch(function() {
+                if (!scope.sortingParams || !attrs.sortBy) {
+                    return;
+                }
+                return scope.sortingParams[attrs.sortBy];
+            }, function(dir) {
                 if (dir === 'asc') {
                     element.removeClass('sort-desc');
                     element.addClass('sort-asc');

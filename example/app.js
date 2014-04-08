@@ -27,6 +27,9 @@ angular.module('siTableExampleApp').filter('status', function () {
 
 
 angular.module('siTableExampleApp').controller('ExampleCtrl', function($scope) {
+    $scope.filter = {
+        $: ''
+    };
     $scope.tableData = [
         {
             created: "2014-04-01T10:16:10Z",
