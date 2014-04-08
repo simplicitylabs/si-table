@@ -36,9 +36,11 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
             $scope.sortingParams = {};
 
             $attrs.$observe('pagination', function(pagination) {
-                if (pagination) {
-                    $scope.paginationParams.limit = parseInt(pagination, 10);
+                if (angular.isUndefined(pagination)) {
+                    return;
                 }
+                $scope.paginationParams.limit = pagination ?
+                        parseInt(pagination, 10) : 10;
             });
 
             $attrs.$observe('paginationLength', function(paginationLength) {
@@ -46,13 +48,6 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
                     $scope.paginationParams.maxShowPages = paginationLength;
                 }
             });
-
-            // $scope.$watch('repeatExpression', function(repeatExpression) {
-            //     var match = repeatExpression.match(/^\s*(.+)\s+in\s+(.*)\s*$/);
-            //     var rhs = match[2];
-            //     items = $scope.$eval(rhs);
-            //     $scope.paginationParams.total = items.length;
-            // }, true);
 
             $scope.$watch(function() {
                 var repeatExpression = $scope.repeatExpression;
@@ -63,7 +58,6 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
                 var rhs = match[2];
                 return $scope.$eval(rhs);
             }, function(items) {
-                console.log(items);
                 $scope.paginationParams.total = items.length;
             }, true);
 
@@ -84,7 +78,7 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
             transclude(scope, function(clones) {
                 element.append(clones);
 
-                if (attrs.pagination) {
+                if (angular.isDefined(attrs.pagination)) {
                     element.after($compile('<si-table-pagination params="paginationParams"/>')(scope));
                 }
             });
@@ -149,7 +143,6 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
             // Create a sliding window of pages around the current page. There
             // should always be `params.maxShowPages` page numbers showing.
             scope.$watch('params', function(params) {
-                console.log(params);
                 var curr = Math.floor(params.offset / params.limit),
                     max = Math.floor(params.total / params.limit),
                     windowSide = Math.floor(params.maxShowPages / 2),

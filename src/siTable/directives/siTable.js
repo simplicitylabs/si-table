@@ -15,9 +15,11 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
             $scope.sortingParams = {};
 
             $attrs.$observe('pagination', function(pagination) {
-                if (pagination) {
-                    $scope.paginationParams.limit = parseInt(pagination, 10);
+                if (angular.isUndefined(pagination)) {
+                    return;
                 }
+                $scope.paginationParams.limit = pagination ?
+                        parseInt(pagination, 10) : 10;
             });
 
             $attrs.$observe('paginationLength', function(paginationLength) {
@@ -55,7 +57,7 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
             transclude(scope, function(clones) {
                 element.append(clones);
 
-                if (attrs.pagination) {
+                if (angular.isDefined(attrs.pagination)) {
                     element.after($compile('<si-table-pagination params="paginationParams"/>')(scope));
                 }
             });
