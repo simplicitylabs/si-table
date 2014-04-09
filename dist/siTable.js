@@ -175,56 +175,33 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
  *
  * Add sorting interface to TH elements which have the `sortBy` attribute on
  * them.
- *
- * @TODO: Could this be done with simply a `sortBy` attribute directive?
  */
-angular.module('siTable.directives').directive('th', function($compile) {
-    var condTemplate = '\
-        <a href="" class="sort" ng-class="{\
-                \'sort-asc\': sortingParams[sortBy] === \'asc\',\
-                \'sort-desc\': sortingParams[sortBy] === \'desc\'\
-            }">\
-        </a>\
-        <span class="sort-caret sort-asc"\
-                ng-if="sortingParams[sortBy] === \'asc\'">&#9660;</span>\
-        <span class="sort-caret sort-desc"\
-                ng-if="sortingParams[sortBy] === \'desc\'">&#9650;</span>\
-    ';
+angular.module('siTable.directives').directive('sortBy', function() {
     return {
-        restrict: 'E',
-        require: '?^siTable',
+        restrict: 'A',
         transclude: true,
+        replace: true,
         scope: true,
-        controller: function($scope, $element, $attrs, $transclude) {
+        template: '\
+            <th class="sort" ng-click="sort()" ng-class="{\
+                    \'sort-asc\': sortingParams[sortBy] === \'asc\',\
+                    \'sort-desc\': sortingParams[sortBy] === \'desc\'\
+                }">\
+                <a href ng-transclude></a>\
+                <span class="sort-caret sort-asc"\
+                        ng-if="sortingParams[sortBy] === \'asc\'">&#9660;</span>\
+                <span class="sort-caret sort-desc"\
+                        ng-if="sortingParams[sortBy] === \'desc\'">&#9650;</span>\
+            </th>',
+        link: function(scope, element, attrs) {
 
-            // Transclude and add an <a> only if the header is sortable
-            $transclude(function(clone) {
-                if ($scope.sortingParams && $attrs.sortBy) {
-                    $element.append($compile(condTemplate)($scope));
-                    $element.find('a').append(clone);
-                } else {
-                    $element.append(clone);
-                }
+            attrs.$observe('sortBy', function(sortBy) {
+                scope.sortBy = sortBy;
             });
 
-            // Copy the sortBy attribute to scope
-            $attrs.$observe('sortBy', function(sortBy) {
-                $scope.sortBy = sortBy;
-            });
-
-        },
-        link: function(scope, element, attrs, controller) {
-
-            // Do as little damage as possible if this `TH` is not part of an
-            // siTable
-            if (!controller) {
-                return;
-            }
-
-            // Tri-state toggle sorting parameter
-            element.on('click', function() {
+            scope.sort = function() {
                 var sortBy = attrs.sortBy;
-                if (!sortBy) {
+                if (!sortBy || !scope.sortingParams) {
                     return;
                 }
                 if (scope.sortingParams[sortBy]) {
@@ -236,8 +213,8 @@ angular.module('siTable.directives').directive('th', function($compile) {
                 } else {
                     scope.sortingParams[sortBy] = 'asc';
                 }
-                scope.$apply();
-            });
+            };
+
         }
     };
 });
