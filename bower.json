@@ -1,7 +1,7 @@
 {
-    "name": "siTable",
+    "name": "si-table",
     "version": "0.0.1-alpha",
-    "main": "dist/siTable.js",
+    "main": "dist/si-table.js",
     "dependencies": {
         "angular": "^1.2"
     },
