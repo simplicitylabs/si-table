@@ -174,7 +174,8 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
  * Table Header Directive
  *
  * Add sorting interface to TH elements which have the `sortBy` attribute on
- * them.
+ * them. The scope adds parameters to an object `sortingParams` on the parent
+ * scope, if it exists.
  */
 angular.module('siTable.directives').directive('sortBy', function() {
     return {
