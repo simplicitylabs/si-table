@@ -11,7 +11,8 @@ angular.module('siTable.directives').directive('tr', function() {
     return {
         restrict: 'E',
         priority: 1001,
-        require: '?^siTable',
+        require: '^siTable',
+        scope: true,
         compile: function(tElement, tAttrs) {
 
             if (!tAttrs.ngRepeat) {
@@ -23,6 +24,10 @@ angular.module('siTable.directives').directive('tr', function() {
 
             // Inject pagination
             tAttrs.ngRepeat += ' | siPagination:paginationParams';
+
+            return function link(scope, element, attrs, controller) {
+                scope.paginationParams = controller.paginationParams;
+            };
         }
     };
 });

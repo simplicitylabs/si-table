@@ -13,7 +13,8 @@ angular.module('siTable.filters').filter('siPagination', function() {
         if (!params) {
             return input;
         }
-        params.total = input.length;
-        return input.slice(params.offset, params.offset + params.limit);
+        params.total = input ? input.length : 0;
+        return input ?
+                input.slice(params.offset, params.offset + params.limit) : [];
     };
 });

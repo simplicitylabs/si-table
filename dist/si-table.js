@@ -27,10 +27,12 @@ angular.module('siTable',
 angular.module('siTable.directives').directive('siTable', function($compile) {
     return {
         restrict: 'A',
-        scope: true,
-        terminal: true,
+        scope: {
+
+        },
         transclude: true,
-        priority: 1500, // higher than ng-repeat
+        replace: true,
+        template: '<table ng-transclude></table>',
         controller: function($scope, $element, $attrs, $transclude) {
             $scope.paginationParams = {
                 offset: 0,
@@ -38,7 +40,7 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
                 limit: Infinity,
             };
 
-            $scope.sortingParams = {};
+            this.paginationParams = $scope.paginationParams;
 
             $attrs.$observe('pagination', function(pagination) {
                 if (angular.isUndefined(pagination)) {
@@ -70,15 +72,10 @@ angular.module('siTable.directives').directive('siTable', function($compile) {
                 $scope.sortArray = sortArray;
                 $scope.paginationParams.offset = 0; // Reset pagination
             }, true);
-        },
-        link: function(scope, element, attrs, controller, transclude) {
-            transclude(scope, function(clones) {
-                element.append(clones);
 
-                if (angular.isDefined(attrs.pagination)) {
-                    element.after($compile('<si-table-pagination params="paginationParams"/>')(scope));
-                }
-            });
+            if (angular.isDefined($attrs.pagination)) {
+                $element.after($compile('<si-table-pagination params="paginationParams"/>')($scope));
+            }
         }
     };
 });
@@ -232,7 +229,8 @@ angular.module('siTable.directives').directive('tr', function() {
     return {
         restrict: 'E',
         priority: 1001,
-        require: '?^siTable',
+        require: '^siTable',
+        scope: true,
         compile: function(tElement, tAttrs) {
 
             if (!tAttrs.ngRepeat) {
@@ -244,6 +242,10 @@ angular.module('siTable.directives').directive('tr', function() {
 
             // Inject pagination
             tAttrs.ngRepeat += ' | siPagination:paginationParams';
+
+            return function link(scope, element, attrs, controller) {
+                scope.paginationParams = controller.paginationParams;
+            };
         }
     };
 });
@@ -262,8 +264,9 @@ angular.module('siTable.filters').filter('siPagination', function() {
         if (!params) {
             return input;
         }
-        params.total = input.length;
-        return input.slice(params.offset, params.offset + params.limit);
+        params.total = input ? input.length : 0;
+        return input ?
+                input.slice(params.offset, params.offset + params.limit) : [];
     };
 });
 })(window, document);
