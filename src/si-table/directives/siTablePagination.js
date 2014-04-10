@@ -6,8 +6,12 @@
 angular.module('siTable.directives').directive('siTablePagination', function() {
     return {
         restrict: 'E',
+        priority: 1001,
+        require: '^siTable',
         scope: {
-            params: '='
+            offset: '=',
+            total: '=',
+            limit: '='
         },
         template: '\
             <ul class="pagination">\
@@ -22,7 +26,7 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
                     <a href ng-click="setPage(page)">{{ page }}</a>\
                 </li>\
                 <li ng-class="{disabled:\
-                            params.offset + params.limit >= params.total}">\
+                        params.offset + params.limit >= params.total}">\
                     <a href ng-click="next()">Next</a>\
                 </li>\
                 <li ng-class="{disabled:\
@@ -30,7 +34,17 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
                     <a href ng-click="last()">Last</a>\
                 </li>\
             </ul>',
-        link: function(scope, element, attrs) {
+        link: function(scope, element, attrs, controller) {
+            var indices = 10;
+
+            scope.params = controller.paginationParams;
+
+            // Observe `indices` (number of indices shown)
+            attrs.$observe('indices', function(_indices) {
+                if (!isNaN(parseInt(_indices, 10))) {
+                    indices = parseInt(_indices, 10);
+                }
+            });
 
             // Go to next page
             scope.next = function() {
@@ -69,12 +83,12 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
                     max = Math.ceil(params.total / params.limit) - 1;
 
                 var minIndex = Math.max(0, Math.min(
-                        curr - Math.ceil(params.maxShowPages / 2),
-                        max - params.maxShowPages + 1));
+                        curr - Math.ceil(indices / 2),
+                        max - indices + 1));
 
                 var showPages = [];
                 for (var i = minIndex, count = 0; i <= max &&
-                        count < params.maxShowPages; count++) {
+                        count < indices; count++) {
                     showPages.push(i + 1);
                     i++;
                 }
@@ -82,7 +96,22 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
                 scope.maxPage = max + 1;
                 scope.currPage = curr + 1;
                 scope.showPages = showPages;
+
+                scope.offset = params.offset;
+                scope.total = params.total;
             }, true);
+
+            scope.$watch('offset', function(offset) {
+                scope.params.offset = offset;
+            });
+
+            scope.$watch('total', function(total) {
+                scope.params.total = total;
+            });
+
+            scope.$watch('limit', function(limit) {
+                scope.params.limit = limit;
+            });
         }
     };
 });
