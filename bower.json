@@ -3,7 +3,7 @@
     "version": "0.0.1-alpha.2",
     "main": "dist/si-table.js",
     "dependencies": {
-        "angular": "^1.2"
+        "angular": "^1.1.4"
     },
     "devDependencies": {
         "angular-mocks": "^1.2",

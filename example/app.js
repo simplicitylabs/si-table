@@ -45,3 +45,28 @@ angular.module('siTableExampleApp').controller('ExampleCtrl', function($scope, $
         $scope.issues = issues.data;
     });
 });
+
+angular.module('siTableExampleApp').controller('RemoteCtrl', function($scope, $http) {
+    $scope.params = {
+        limit: 1,
+    };
+
+    var url = 'http://tunner.silabs.com/api/v1/projects/';
+    function updateData(offset, limit, sortBy) {
+        $http.get(url, {
+            params: {
+                offset: offset,
+                limit: limit,
+                orderBy: sortBy
+            }
+        }).then(function(data) {
+            $scope.projects = data.data.objects;
+            $scope.params.total = data.data.meta.totalCount;
+        });
+    }
+
+    $scope.$watch('params', function(params) {
+        console.log('updating data', params);
+        updateData(params.offset, params.limit, params.sortBy);
+    }, true);
+});

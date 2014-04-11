@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="siTableExampleApp">
+    <head>
+        <title>si-table example</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+        <script src="../si-table.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div class="container">
+
+            <div ng-controller="RemoteCtrl">
+
+                <div class="page-header">
+                    <h1>SiTable Example</h1>
+                </div>
+
+                <table class="table" si-table>
+                    <thead>
+                        <tr>
+                            <th sort-by="name">Name</th>
+                            <th>Revision</th>
+                            <th>Created At</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="project in projects">
+                            <td>{{ project.name }}</td>
+                            <td>{{ project.revision }}</td>
+                            <td>{{ project.created | date }}</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">
+                                <si-table-pagination limit="1" total="params.total"></si-table-pagination>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+            </div>
+        </div>
+    </body>
+</html>
