@@ -62,11 +62,15 @@
                     <tfoot>
                         <tr>
                             <td colspan="4">
-                                <si-table-pagination indices="8" offset="params.offset" total="params.total" limit="10"></si-table-pagination>
+                                <si-table-pagination indices="8" limit="10"></si-table-pagination>
                             </td>
                         </tr>
                     </tfoot>
                 </table>
+
+                <div class="alert alert-info" ng-if="!issues">
+                    Loading ...
+                </div>
 
             </div>
         </div>

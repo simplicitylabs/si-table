@@ -74,20 +74,35 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
                 scope.currPage = curr + 1;
                 scope.showPages = showPages;
 
-                scope.offset = params.offset;
-                scope.total = params.total;
+                if (angular.isDefined(scope.offset)) {
+                    scope.offset = params.offset;
+                }
+
+                if (angular.isDefined(scope.total)) {
+                    scope.total = params.total;
+                }
             }, true);
 
+            scope.$watch('params.total', function() {
+                scope.params.offset = 0;
+            });
+
             scope.$watch('offset', function(offset) {
-                scope.params.offset = offset;
+                if (angular.isNumber(offset)) {
+                    scope.params.offset = offset;
+                }
             });
 
             scope.$watch('total', function(total) {
-                scope.params.total = total;
+                if (angular.isNumber(total)) {
+                    scope.params.total = total;
+                }
             });
 
             scope.$watch('limit', function(limit) {
-                scope.params.limit = limit;
+                if (angular.isNumber(limit)) {
+                    scope.params.limit = limit;
+                }
             });
         }
     };
