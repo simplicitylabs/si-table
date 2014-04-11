@@ -16,10 +16,10 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
         template: '\
             <ul class="pagination">\
                 <li ng-class="{disabled: params.offset === 0}">\
-                    <a href ng-click="first()">First</a>\
+                    <a href ng-click="setPage(1)">First</a>\
                 </li>\
                 <li ng-class="{disabled: params.offset === 0}">\
-                    <a href ng-click="previous()">Previous</a>\
+                    <a href ng-click="setPage(currPage - 1)">Previous</a>\
                 </li>\
                 <li ng-repeat="page in showPages"\
                         ng-class="{active: currPage === page}">\
@@ -27,11 +27,11 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
                 </li>\
                 <li ng-class="{disabled:\
                         params.offset + params.limit >= params.total}">\
-                    <a href ng-click="next()">Next</a>\
+                    <a href ng-click="setPage(currPage + 1)">Next</a>\
                 </li>\
                 <li ng-class="{disabled:\
                         params.offset + params.limit >= params.total}">\
-                    <a href ng-click="last()">Last</a>\
+                    <a href ng-click="setPage(maxPage)">Last</a>\
                 </li>\
             </ul>',
         link: function(scope, element, attrs, controller) {
@@ -46,34 +46,11 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
                 }
             });
 
-            // Go to next page
-            scope.next = function() {
-                if (scope.params.offset + scope.params.limit <
-                            scope.params.total) {
-                    scope.params.offset += scope.params.limit;
-                }
-            };
-
-            // Go to previous page
-            scope.previous = function() {
-                if (scope.params.offset > 0) {
-                    scope.params.offset -= scope.params.limit;
-                }
-            };
-
             // Go to specific page
             scope.setPage = function(page) {
-                scope.params.offset = (page - 1) * scope.params.limit;
-            };
-
-            // Go to first page
-            scope.first = function() {
-                scope.params.offset = 0;
-            };
-
-            // Go to last page
-            scope.last = function() {
-                scope.setPage(scope.maxPage);
+                if (page >= 1 && page <= scope.maxPage) {
+                    scope.params.offset = (page - 1) * scope.params.limit;
+                }
             };
 
             // Create a sliding window of pages around the current page. There
