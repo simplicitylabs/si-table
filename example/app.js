@@ -31,9 +31,13 @@ angular.module('siTableExampleApp').controller('ExampleCtrl', function($scope, $
         $: ''
     };
     $scope.params = {
-
+        limit: 10,
     };
-    $scope.sortBy = [];
+
+    $scope.$watch('params', function(params) {
+        console.log(params);
+        $scope.$eval('params = params');
+    }, true);
 
     // var url = 'https://api.github.com/repos/angular/angular.js/issues'
     var url = 'issues.offline.json';

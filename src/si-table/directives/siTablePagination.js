@@ -9,9 +9,9 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
         priority: 1001,
         require: '^siTable',
         scope: {
-            offset: '=',
-            total: '=',
-            limit: '='
+            offset: '=?',
+            total: '=?',
+            limit: '=?'
         },
         template: '\
             <ul class="pagination">\
@@ -74,12 +74,10 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
                 scope.currPage = curr + 1;
                 scope.showPages = showPages;
 
-                if (angular.isDefined(scope.offset)) {
-                    scope.offset = params.offset;
-                }
-
-                if (angular.isDefined(scope.total)) {
-                    scope.total = params.total;
+                scope.offset = params.offset;
+                scope.total = params.total;
+                if (angular.isObject(attrs.limit)) {
+                    scope.limit = params.limit;
                 }
             }, true);
 
