@@ -28,27 +28,36 @@ angular.module('siTable.directives').directive('siTable', function() {
     return {
         restrict: 'A',
         scope: {
-
+            sortArray: '='
         },
-        controller: function($scope, $element, $attrs, $transclude) {
+        controller: function($scope) {
+            var self = this;
+
             $scope.paginationParams = {
                 offset: 0,
                 limit: Infinity,
             };
             this.paginationParams = $scope.paginationParams;
 
-            $scope.$watch('sortingParams', function(sortingParams) {
-                var sortArray = [];
-                for (var key in sortingParams) {
-                    if (sortingParams[key] === 'desc') {
-                        sortArray.push('-' + key);
-                    } else {
-                        sortArray.push(key);
-                    }
-                }
-                $scope.sortArray = sortArray;
-                $scope.paginationParams.offset = 0; // Reset pagination
-            }, true);
+            this.sortingParams = {
+                sortArray: [],
+            };
+
+
+            // $scope.$watch(function() {
+            //     return self.sortingParams;
+            // }, function(sortingParams) {
+            //     var sortArray = [];
+            //     for (var key in sortingParams) {
+            //         if (sortingParams[key] === 'desc') {
+            //             sortArray.push('-' + key);
+            //         } else {
+            //             sortArray.push(key);
+            //         }
+            //     }
+            //     self.sortingParams.sortArray = sortArray;
+            //     $scope.paginationParams.offset = 0; // Reset pagination
+            // }, true);
         }
     };
 });
@@ -182,18 +191,20 @@ angular.module('siTable.directives').directive('sortBy', function() {
         transclude: true,
         replace: true,
         scope: true,
+        require: '^siTable',
         template: '\
             <th class="sort" ng-click="sort()" ng-class="{\
-                    \'sort-asc\': sortingParams[sortBy] === \'asc\',\
-                    \'sort-desc\': sortingParams[sortBy] === \'desc\'\
+                    \'sort-asc\': state === \'asc\',\
+                    \'sort-desc\': state === \'desc\'\
                 }">\
                 <a href ng-transclude></a>\
                 <span class="sort-caret sort-asc"\
-                        ng-if="sortingParams[sortBy] === \'asc\'">&#9660;</span>\
+                        ng-if="state === \'asc\'">&#9660;</span>\
                 <span class="sort-caret sort-desc"\
-                        ng-if="sortingParams[sortBy] === \'desc\'">&#9650;</span>\
+                        ng-if="state === \'desc\'">&#9650;</span>\
             </th>',
-        link: function(scope, element, attrs) {
+        link: function(scope, element, attrs, controller) {
+            var params = controller.sortingParams;
 
             attrs.$observe('sortBy', function(sortBy) {
                 scope.sortBy = sortBy;
@@ -201,17 +212,25 @@ angular.module('siTable.directives').directive('sortBy', function() {
 
             scope.sort = function() {
                 var sortBy = attrs.sortBy;
-                if (!sortBy || !scope.sortingParams) {
+                if (!sortBy || !params) {
                     return;
                 }
-                if (scope.sortingParams[sortBy]) {
-                    if (scope.sortingParams[sortBy] === 'asc') {
-                        scope.sortingParams[sortBy] = 'desc';
-                    } else {
-                        delete scope.sortingParams[sortBy];
-                    }
+
+                // Tri-state: ascending -> descending -> neutral, represented by
+                // an array as per Angular's orderBy specification.
+                if (params.sortArray.indexOf(sortBy) !== -1) {
+                    // ascending -> descending
+                    params.sortArray[params.sortArray.indexOf(sortBy)] = '-' +
+                            sortBy;
+                    scope.state = 'desc';
+                } else if (params.sortArray.indexOf('-' + sortBy) !== -1) {
+                    // descending -> neutral
+                    params.sortArray.splice(params.sortArray.indexOf('-' + sortBy), 1);
+                    scope.state = '';
                 } else {
-                    scope.sortingParams[sortBy] = 'asc';
+                    // neutral -> ascending
+                    params.sortArray.push(sortBy);
+                    scope.state = 'asc';
                 }
             };
 
@@ -240,13 +259,14 @@ angular.module('siTable.directives').directive('tr', function() {
             }
 
             // Inject sorting
-            tAttrs.ngRepeat += ' | orderBy:sortArray';
+            tAttrs.ngRepeat += ' | orderBy:sortingParams.sortArray';
 
             // Inject pagination
             tAttrs.ngRepeat += ' | siPagination:paginationParams';
 
             return function link(scope, element, attrs, controller) {
                 scope.paginationParams = controller.paginationParams;
+                scope.sortingParams = controller.sortingParams;
             };
         }
     };

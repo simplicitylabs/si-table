@@ -20,13 +20,14 @@ angular.module('siTable.directives').directive('tr', function() {
             }
 
             // Inject sorting
-            tAttrs.ngRepeat += ' | orderBy:sortArray';
+            tAttrs.ngRepeat += ' | orderBy:sortingParams.sortArray';
 
             // Inject pagination
             tAttrs.ngRepeat += ' | siPagination:paginationParams';
 
             return function link(scope, element, attrs, controller) {
                 scope.paginationParams = controller.paginationParams;
+                scope.sortingParams = controller.sortingParams;
             };
         }
     };

@@ -17,7 +17,7 @@
 
             <div ng-controller="ExampleCtrl">
 
-<!--                 <table class="table">
+                <table class="table">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -30,7 +30,7 @@
                             <td>25</td>
                         </tr>
                     </tbody>
-                </table> -->
+                </table>
 
                 <form class="form">
                     <div class="form-group">
@@ -39,7 +39,9 @@
                     </div>
                 </form>
 
-                <table class="table" si-table pagination="10" pagination-length="10">
+                {{ sortBy }}
+
+                <table class="table" si-table pagination="10" pagination-length="10" sorting="sortBy">
                     <thead>
                         <tr>
                             <th sort-by="id">ID</th>
@@ -67,7 +69,7 @@
                     <tfoot>
                         <tr>
                             <td colspan="4">
-                                <si-table-pagination indices="8" offset="params.offset" total="params.total" limit="params.limit"></si-table-pagination>
+                                <si-table-pagination indices="8" offset="params.offset" total="params.total" limit="10"></si-table-pagination>
                             </td>
                         </tr>
                     </tfoot>
@@ -79,8 +81,8 @@
                 </dl>
 
                 <button class="btn btn-primary" ng-click="params.offset = params.offset + 1">offset += 1</button>
-                <button class="btn btn-primary" ng-click="params.limit = params.limit - 1">limit -= 1</button>
-                <button class="btn btn-primary" ng-click="params.limit = params.limit + 1">limit += 1</button>
+<!--                 <button class="btn btn-primary" ng-click="params.limit = params.limit - 1">limit -= 1</button>
+                <button class="btn btn-primary" ng-click="params.limit = params.limit + 1">limit += 1</button> -->
 
             </div>
 
