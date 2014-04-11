@@ -1,0 +1,1887 @@
+
+[
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7086",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7086/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7086/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7086/events",
+    "html_url": "https://github.com/angular/angular.js/pull/7086",
+    "id": 31320709,
+    "number": 7086,
+    "title": "Example for angular.version",
+    "user": {
+      "login": "nitulkukadia",
+      "id": 6572207,
+      "avatar_url": "https://avatars.githubusercontent.com/u/6572207?",
+      "gravatar_id": "50d463f2dfeefb3218b62edfdcb2c0c8",
+      "url": "https://api.github.com/users/nitulkukadia",
+      "html_url": "https://github.com/nitulkukadia",
+      "followers_url": "https://api.github.com/users/nitulkukadia/followers",
+      "following_url": "https://api.github.com/users/nitulkukadia/following{/other_user}",
+      "gists_url": "https://api.github.com/users/nitulkukadia/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/nitulkukadia/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/nitulkukadia/subscriptions",
+      "organizations_url": "https://api.github.com/users/nitulkukadia/orgs",
+      "repos_url": "https://api.github.com/users/nitulkukadia/repos",
+      "events_url": "https://api.github.com/users/nitulkukadia/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/nitulkukadia/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+PR",
+        "name": "gh: PR",
+        "color": "006b75"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 2,
+    "created_at": "2014-04-11T11:33:47Z",
+    "updated_at": "2014-04-11T11:40:02Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": "https://api.github.com/repos/angular/angular.js/pulls/7086",
+      "html_url": "https://github.com/angular/angular.js/pull/7086",
+      "diff_url": "https://github.com/angular/angular.js/pull/7086.diff",
+      "patch_url": "https://github.com/angular/angular.js/pull/7086.patch"
+    },
+    "body": "Request Type: docs\n\nHow to reproduce: \n\nComponent(s): \n\nImpact: large\n\nComplexity: small\n\nThis issue is related to: \n\n**Detailed Description:**\n\nAdded Example for angular.version\n\n**Other Comments:**\n\n"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7085",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7085/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7085/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7085/events",
+    "html_url": "https://github.com/angular/angular.js/pull/7085",
+    "id": 31312356,
+    "number": 7085,
+    "title": "Removed ng-init from inner loop",
+    "user": {
+      "login": "lucasprus",
+      "id": 2707997,
+      "avatar_url": "https://avatars.githubusercontent.com/u/2707997?",
+      "gravatar_id": null,
+      "url": "https://api.github.com/users/lucasprus",
+      "html_url": "https://github.com/lucasprus",
+      "followers_url": "https://api.github.com/users/lucasprus/followers",
+      "following_url": "https://api.github.com/users/lucasprus/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lucasprus/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lucasprus/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lucasprus/subscriptions",
+      "organizations_url": "https://api.github.com/users/lucasprus/orgs",
+      "repos_url": "https://api.github.com/users/lucasprus/repos",
+      "events_url": "https://api.github.com/users/lucasprus/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lucasprus/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+PR",
+        "name": "gh: PR",
+        "color": "006b75"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2014-04-11T09:05:09Z",
+    "updated_at": "2014-04-11T09:05:11Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": "https://api.github.com/repos/angular/angular.js/pulls/7085",
+      "html_url": "https://github.com/angular/angular.js/pull/7085",
+      "diff_url": "https://github.com/angular/angular.js/pull/7085.diff",
+      "patch_url": "https://github.com/angular/angular.js/pull/7085.patch"
+    },
+    "body": "This is unnecessary. $index should be used instead."
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7084",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7084/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7084/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7084/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7084",
+    "id": 31311233,
+    "number": 7084,
+    "title": "French negative currency pattern is wrong (Localization issue)",
+    "user": {
+      "login": "tricky21",
+      "id": 255766,
+      "avatar_url": "https://avatars.githubusercontent.com/u/255766?",
+      "gravatar_id": "689206b9d232e87bc50fe8bf3ab0ddad",
+      "url": "https://api.github.com/users/tricky21",
+      "html_url": "https://github.com/tricky21",
+      "followers_url": "https://api.github.com/users/tricky21/followers",
+      "following_url": "https://api.github.com/users/tricky21/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tricky21/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tricky21/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tricky21/subscriptions",
+      "organizations_url": "https://api.github.com/users/tricky21/orgs",
+      "repos_url": "https://api.github.com/users/tricky21/repos",
+      "events_url": "https://api.github.com/users/tricky21/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tricky21/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-04-11T08:45:12Z",
+    "updated_at": "2014-04-11T08:45:17Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "The french negative currency pattern is wrong but it's ok in google closure I18N library.\r\n\r\nAngularJs file: https://github.com/angular/angular.js/blob/96b13bbee17819fb28c9a4e1e22e426b1b07a554/i18n/closure/numberSymbols.js#L1066\r\n\r\nGoogle closure file: https://code.google.com/p/closure-library/source/browse/closure/goog/i18n/numberformatsymbols.js#1282\r\n\r\nThe solution seems simple : run `i18n/update-closure.sh`, run `i18n/generate.sh` and build a package.\r\nBut the impact in `i18n/closure` directory is big !\r\n\r\nThere is a reason to not include that in the release process ?"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7083",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7083/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7083/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7083/events",
+    "html_url": "https://github.com/angular/angular.js/pull/7083",
+    "id": 31306904,
+    "number": 7083,
+    "title": "docs($httpBackend): grammar fix",
+    "user": {
+      "login": "swirlycheetah",
+      "id": 894092,
+      "avatar_url": "https://avatars.githubusercontent.com/u/894092?",
+      "gravatar_id": "666e2844d622f8714e8ccf8ffb48a47c",
+      "url": "https://api.github.com/users/swirlycheetah",
+      "html_url": "https://github.com/swirlycheetah",
+      "followers_url": "https://api.github.com/users/swirlycheetah/followers",
+      "following_url": "https://api.github.com/users/swirlycheetah/following{/other_user}",
+      "gists_url": "https://api.github.com/users/swirlycheetah/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/swirlycheetah/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/swirlycheetah/subscriptions",
+      "organizations_url": "https://api.github.com/users/swirlycheetah/orgs",
+      "repos_url": "https://api.github.com/users/swirlycheetah/repos",
+      "events_url": "https://api.github.com/users/swirlycheetah/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/swirlycheetah/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/cla%3A+no",
+        "name": "cla: no",
+        "color": "f7c6c7"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+PR",
+        "name": "gh: PR",
+        "color": "006b75"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 2,
+    "created_at": "2014-04-11T07:19:13Z",
+    "updated_at": "2014-04-11T08:14:46Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": "https://api.github.com/repos/angular/angular.js/pulls/7083",
+      "html_url": "https://github.com/angular/angular.js/pull/7083",
+      "diff_url": "https://github.com/angular/angular.js/pull/7083.diff",
+      "patch_url": "https://github.com/angular/angular.js/pull/7083.patch"
+    },
+    "body": "Request Type: docs\n\nHow to reproduce: \n\nComponent(s): \n\nImpact: \n\nComplexity: \n\nThis issue is related to: \n\n**Detailed Description:**\n\nSmall grammar fix for $httpBackend documentation.\n\n**Other Comments:**\n\n"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7082",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7082/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7082/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7082/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7082",
+    "id": 31300568,
+    "number": 7082,
+    "title": "$Resource Cross Domain (CORS) in IE8,9: Access is denied",
+    "user": {
+      "login": "buihoanghai",
+      "id": 6602376,
+      "avatar_url": "https://avatars.githubusercontent.com/u/6602376?",
+      "gravatar_id": "b03c5af5219af906654e930750683a4e",
+      "url": "https://api.github.com/users/buihoanghai",
+      "html_url": "https://github.com/buihoanghai",
+      "followers_url": "https://api.github.com/users/buihoanghai/followers",
+      "following_url": "https://api.github.com/users/buihoanghai/following{/other_user}",
+      "gists_url": "https://api.github.com/users/buihoanghai/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/buihoanghai/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/buihoanghai/subscriptions",
+      "organizations_url": "https://api.github.com/users/buihoanghai/orgs",
+      "repos_url": "https://api.github.com/users/buihoanghai/repos",
+      "events_url": "https://api.github.com/users/buihoanghai/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/buihoanghai/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-04-11T03:56:39Z",
+    "updated_at": "2014-04-11T03:56:44Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": " I'm getting an 'Error: Access is denied' in my debugging console in IE8,9. This works on other browsers. How can i solve this issue\r\n"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7079",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7079/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7079/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7079/events",
+    "html_url": "https://github.com/angular/angular.js/pull/7079",
+    "id": 31287757,
+    "number": 7079,
+    "title": "docs(docs.css): add media query fix",
+    "user": {
+      "login": "fijimunkii",
+      "id": 4974257,
+      "avatar_url": "https://avatars.githubusercontent.com/u/4974257?",
+      "gravatar_id": "87997d4e1b8b0ec32c9a49695ad17733",
+      "url": "https://api.github.com/users/fijimunkii",
+      "html_url": "https://github.com/fijimunkii",
+      "followers_url": "https://api.github.com/users/fijimunkii/followers",
+      "following_url": "https://api.github.com/users/fijimunkii/following{/other_user}",
+      "gists_url": "https://api.github.com/users/fijimunkii/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/fijimunkii/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/fijimunkii/subscriptions",
+      "organizations_url": "https://api.github.com/users/fijimunkii/orgs",
+      "repos_url": "https://api.github.com/users/fijimunkii/repos",
+      "events_url": "https://api.github.com/users/fijimunkii/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/fijimunkii/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/cla%3A+no",
+        "name": "cla: no",
+        "color": "f7c6c7"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+PR",
+        "name": "gh: PR",
+        "color": "006b75"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 3,
+    "created_at": "2014-04-10T22:32:40Z",
+    "updated_at": "2014-04-11T01:23:58Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": "https://api.github.com/repos/angular/angular.js/pulls/7079",
+      "html_url": "https://github.com/angular/angular.js/pull/7079",
+      "diff_url": "https://github.com/angular/angular.js/pull/7079.diff",
+      "patch_url": "https://github.com/angular/angular.js/pull/7079.patch"
+    },
+    "body": "Request Type: docs\n\nHow to reproduce: resize browser to between 992px and 768px\n\nComponent(s): \n\nImpact: \n\nComplexity: small\n\nThis issue is related to: \n\n**Detailed Description:**\n\n\n\n**Other Comments:**\n\nshow main-body content that is hidden underneath bootstrap navbar\r\nbetween 992px and 768px screen width"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7077",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7077/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7077/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7077/events",
+    "html_url": "https://github.com/angular/angular.js/pull/7077",
+    "id": 31273493,
+    "number": 7077,
+    "title": "docs(ngTouch): define module depending on ngTouch in ngTouch examples",
+    "user": {
+      "login": "caitp",
+      "id": 2294695,
+      "avatar_url": "https://avatars.githubusercontent.com/u/2294695?",
+      "gravatar_id": "bf1b0db965c4015382f468b96b72d87e",
+      "url": "https://api.github.com/users/caitp",
+      "html_url": "https://github.com/caitp",
+      "followers_url": "https://api.github.com/users/caitp/followers",
+      "following_url": "https://api.github.com/users/caitp/following{/other_user}",
+      "gists_url": "https://api.github.com/users/caitp/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/caitp/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/caitp/subscriptions",
+      "organizations_url": "https://api.github.com/users/caitp/orgs",
+      "repos_url": "https://api.github.com/users/caitp/repos",
+      "events_url": "https://api.github.com/users/caitp/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/caitp/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+PR",
+        "name": "gh: PR",
+        "color": "006b75"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2014-04-10T19:26:33Z",
+    "updated_at": "2014-04-10T19:26:37Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": "https://api.github.com/repos/angular/angular.js/pulls/7077",
+      "html_url": "https://github.com/angular/angular.js/pull/7077",
+      "diff_url": "https://github.com/angular/angular.js/pull/7077.diff",
+      "patch_url": "https://github.com/angular/angular.js/pull/7077.patch"
+    },
+    "body": "In addition to requiring that the file is loaded, it's also necessary to\ndepend on the ngTouch module when creating the injector."
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7076",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7076/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7076/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7076/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7076",
+    "id": 31269649,
+    "number": 7076,
+    "title": "tutorial's npm install failing - win 7",
+    "user": {
+      "login": "keyo321",
+      "id": 2386960,
+      "avatar_url": "https://avatars.githubusercontent.com/u/2386960?",
+      "gravatar_id": "76e1c4e854c1e45a587387861d813d4d",
+      "url": "https://api.github.com/users/keyo321",
+      "html_url": "https://github.com/keyo321",
+      "followers_url": "https://api.github.com/users/keyo321/followers",
+      "following_url": "https://api.github.com/users/keyo321/following{/other_user}",
+      "gists_url": "https://api.github.com/users/keyo321/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/keyo321/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/keyo321/subscriptions",
+      "organizations_url": "https://api.github.com/users/keyo321/orgs",
+      "repos_url": "https://api.github.com/users/keyo321/repos",
+      "events_url": "https://api.github.com/users/keyo321/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/keyo321/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-04-10T18:43:08Z",
+    "updated_at": "2014-04-10T18:44:19Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "Hi,\r\n\r\nI'm trying to follow the tutorial: http://docs.angularjs.org/tutorial and I can't seem to get pass this step: npm install.  \r\n\r\nHere's what i see after it executes:\r\nnpm http 304 https://registry.npmjs.org/tinycolor\r\nnpm http 304 https://registry.npmjs.org/nan\r\nnpm http 304 https://registry.npmjs.org/options\r\n\r\n> ws@0.4.31 install C:\\angular-phonecat\\node_modules\\karma\\node_modules\\soc\r\nket.io\\node_modules\\socket.io-client\\node_modules\\ws\r\n> (node-gyp rebuild 2> builderror.log) || (exit 0)\r\n\r\nIn the npm-debug.log file: this is what i get:\r\n13158 error Error: spawn ENOENT\r\n13158 error     at errnoException (child_process.js:988:11)\r\n13158 error     at Process.ChildProcess._handle.onexit (child_process.js:779:34)\r\n13159 error If you need help, you may report this *entire* log,\r\n13159 error including the npm and node versions, at:\r\n13159 error     <http://github.com/npm/npm/issues>\r\n13160 error System Windows_NT 6.1.7601\r\n13161 error command \"C:\\\\Program Files (x86)\\\\nodejs\\\\\\\\node.exe\" \"C:\\\\Program Files (x86)\\\\nodejs\\\\node_modules\\\\npm\\\\bin\\\\npm-cli.js\" \"install\"\r\n13162 error cwd C:\\angular-phonecat\r\n13163 error node -v v0.10.26\r\n13164 error npm -v 1.4.3\r\n13165 error syscall spawn\r\n13166 error code ENOENT\r\n13167 error errno ENOENT\r\n13168 verbose exit [ 1, true ]\r\n\r\nAny idea what i'm missing or doing wrong?\r\n\r\nthanks for the help.\r\n"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7072",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7072/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7072/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7072/events",
+    "html_url": "https://github.com/angular/angular.js/pull/7072",
+    "id": 31238585,
+    "number": 7072,
+    "title": "Inconsistency in first paragraph",
+    "user": {
+      "login": "vvvvalvalval",
+      "id": 5859120,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5859120?",
+      "gravatar_id": "a90f0469a78741e60afc0876b2a7aff3",
+      "url": "https://api.github.com/users/vvvvalvalval",
+      "html_url": "https://github.com/vvvvalvalval",
+      "followers_url": "https://api.github.com/users/vvvvalvalval/followers",
+      "following_url": "https://api.github.com/users/vvvvalvalval/following{/other_user}",
+      "gists_url": "https://api.github.com/users/vvvvalvalval/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/vvvvalvalval/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/vvvvalvalval/subscriptions",
+      "organizations_url": "https://api.github.com/users/vvvvalvalval/orgs",
+      "repos_url": "https://api.github.com/users/vvvvalvalval/repos",
+      "events_url": "https://api.github.com/users/vvvvalvalval/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/vvvvalvalval/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/cla%3A+no",
+        "name": "cla: no",
+        "color": "f7c6c7"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+PR",
+        "name": "gh: PR",
+        "color": "006b75"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 2,
+    "created_at": "2014-04-10T12:44:41Z",
+    "updated_at": "2014-04-10T17:14:40Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": "https://api.github.com/repos/angular/angular.js/pulls/7072",
+      "html_url": "https://github.com/angular/angular.js/pull/7072",
+      "diff_url": "https://github.com/angular/angular.js/pull/7072.diff",
+      "patch_url": "https://github.com/angular/angular.js/pull/7072.patch"
+    },
+    "body": "I think the \"first line of defense\" are unit tests, not end-ot-end tests, otherwise the sentence makes little sense."
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7070",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7070/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7070/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7070/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7070",
+    "id": 31235161,
+    "number": 7070,
+    "title": "input type=\"number\" is valid when a non numeric value is entered in IE 11",
+    "user": {
+      "login": "brik",
+      "id": 308553,
+      "avatar_url": "https://avatars.githubusercontent.com/u/308553?",
+      "gravatar_id": "0ab00d914cf55a1fa251e5f2423f00d8",
+      "url": "https://api.github.com/users/brik",
+      "html_url": "https://github.com/brik",
+      "followers_url": "https://api.github.com/users/brik/followers",
+      "following_url": "https://api.github.com/users/brik/following{/other_user}",
+      "gists_url": "https://api.github.com/users/brik/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/brik/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/brik/subscriptions",
+      "organizations_url": "https://api.github.com/users/brik/orgs",
+      "repos_url": "https://api.github.com/users/brik/repos",
+      "events_url": "https://api.github.com/users/brik/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/brik/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 5,
+    "created_at": "2014-04-10T11:45:00Z",
+    "updated_at": "2014-04-10T13:27:01Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "When entering text or a combination of text and numbers, form.number.$valid\" does not always validate to false.\r\n\r\nExamples:\r\n\"ddd\" validates to true (not OK)\r\n\"ddd3\" validates to true (not OK)\r\n\"3ddd\" validates to false \r\n\"33\" validates to true\r\n\r\nWhen using the required attribute, it works as expected.\r\n\r\nTested OK in Chrome and Firefox 28.0\r\n\r\nPlnkr: http://plnkr.co/edit/uqOkCPxNYQWg8xog1IKi?p=preview\r\n\r\nLooks like it is a similar issue to #2144"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7069",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7069/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7069/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7069/events",
+    "html_url": "https://github.com/angular/angular.js/pull/7069",
+    "id": 31220640,
+    "number": 7069,
+    "title": "Update bootstrap.ngdoc",
+    "user": {
+      "login": "abhiroyg",
+      "id": 5327539,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5327539?",
+      "gravatar_id": "f753a30b9902334465bc8e85c870502f",
+      "url": "https://api.github.com/users/abhiroyg",
+      "html_url": "https://github.com/abhiroyg",
+      "followers_url": "https://api.github.com/users/abhiroyg/followers",
+      "following_url": "https://api.github.com/users/abhiroyg/following{/other_user}",
+      "gists_url": "https://api.github.com/users/abhiroyg/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/abhiroyg/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/abhiroyg/subscriptions",
+      "organizations_url": "https://api.github.com/users/abhiroyg/orgs",
+      "repos_url": "https://api.github.com/users/abhiroyg/repos",
+      "events_url": "https://api.github.com/users/abhiroyg/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/abhiroyg/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/cla%3A+no",
+        "name": "cla: no",
+        "color": "f7c6c7"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+PR",
+        "name": "gh: PR",
+        "color": "006b75"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 5,
+    "created_at": "2014-04-10T07:31:38Z",
+    "updated_at": "2014-04-10T17:14:42Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": "https://api.github.com/repos/angular/angular.js/pulls/7069",
+      "html_url": "https://github.com/angular/angular.js/pull/7069",
+      "diff_url": "https://github.com/angular/angular.js/pull/7069.diff",
+      "patch_url": "https://github.com/angular/angular.js/pull/7069.patch"
+    },
+    "body": "Hi,\r\n\r\nngApp is directive name and ng-app is attribute name, right?\r\n\r\nThanks and regards,\r\nabhiroyg"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7068",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7068/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7068/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7068/events",
+    "html_url": "https://github.com/angular/angular.js/pull/7068",
+    "id": 31207584,
+    "number": 7068,
+    "title": "Update unsafe.ngdoc",
+    "user": {
+      "login": "stephennancekivell",
+      "id": 727013,
+      "avatar_url": "https://avatars.githubusercontent.com/u/727013?",
+      "gravatar_id": "992f4bf3c2c47725e84ad5dddadd0b23",
+      "url": "https://api.github.com/users/stephennancekivell",
+      "html_url": "https://github.com/stephennancekivell",
+      "followers_url": "https://api.github.com/users/stephennancekivell/followers",
+      "following_url": "https://api.github.com/users/stephennancekivell/following{/other_user}",
+      "gists_url": "https://api.github.com/users/stephennancekivell/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/stephennancekivell/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/stephennancekivell/subscriptions",
+      "organizations_url": "https://api.github.com/users/stephennancekivell/orgs",
+      "repos_url": "https://api.github.com/users/stephennancekivell/repos",
+      "events_url": "https://api.github.com/users/stephennancekivell/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/stephennancekivell/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/cla%3A+no",
+        "name": "cla: no",
+        "color": "f7c6c7"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+PR",
+        "name": "gh: PR",
+        "color": "006b75"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 3,
+    "created_at": "2014-04-10T00:58:55Z",
+    "updated_at": "2014-04-10T17:14:45Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": "https://api.github.com/repos/angular/angular.js/pulls/7068",
+      "html_url": "https://github.com/angular/angular.js/pull/7068",
+      "diff_url": "https://github.com/angular/angular.js/pull/7068.diff",
+      "patch_url": "https://github.com/angular/angular.js/pull/7068.patch"
+    },
+    "body": "Suggest including ngSanatize."
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7067",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7067/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7067/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7067/events",
+    "html_url": "https://github.com/angular/angular.js/pull/7067",
+    "id": 31207166,
+    "number": 7067,
+    "title": "fix($compile): reference correct directive name in ctreq error",
+    "user": {
+      "login": "caitp",
+      "id": 2294695,
+      "avatar_url": "https://avatars.githubusercontent.com/u/2294695?",
+      "gravatar_id": "bf1b0db965c4015382f468b96b72d87e",
+      "url": "https://api.github.com/users/caitp",
+      "html_url": "https://github.com/caitp",
+      "followers_url": "https://api.github.com/users/caitp/followers",
+      "following_url": "https://api.github.com/users/caitp/following{/other_user}",
+      "gists_url": "https://api.github.com/users/caitp/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/caitp/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/caitp/subscriptions",
+      "organizations_url": "https://api.github.com/users/caitp/orgs",
+      "repos_url": "https://api.github.com/users/caitp/repos",
+      "events_url": "https://api.github.com/users/caitp/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/caitp/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/cla%3A+yes",
+        "name": "cla: yes",
+        "color": "bfe5bf"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/component%3A+%24compile",
+        "name": "component: $compile",
+        "color": "e102d8"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+PR",
+        "name": "gh: PR",
+        "color": "006b75"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/needs%3A+review",
+        "name": "needs: review",
+        "color": "eb6420"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/severity%3A+confusing",
+        "name": "severity: confusing",
+        "color": "cd19e7"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/type%3A+bug",
+        "name": "type: bug",
+        "color": "000000"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": {
+      "url": "https://api.github.com/repos/angular/angular.js/milestones/49",
+      "labels_url": "https://api.github.com/repos/angular/angular.js/milestones/49/labels",
+      "id": 619802,
+      "number": 49,
+      "title": "1.3.0-beta.6",
+      "description": "",
+      "creator": {
+        "login": "jeffbcross",
+        "id": 463703,
+        "avatar_url": "https://avatars.githubusercontent.com/u/463703?",
+        "gravatar_id": "007ba2fad36ea1313710744713dd6594",
+        "url": "https://api.github.com/users/jeffbcross",
+        "html_url": "https://github.com/jeffbcross",
+        "followers_url": "https://api.github.com/users/jeffbcross/followers",
+        "following_url": "https://api.github.com/users/jeffbcross/following{/other_user}",
+        "gists_url": "https://api.github.com/users/jeffbcross/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/jeffbcross/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/jeffbcross/subscriptions",
+        "organizations_url": "https://api.github.com/users/jeffbcross/orgs",
+        "repos_url": "https://api.github.com/users/jeffbcross/repos",
+        "events_url": "https://api.github.com/users/jeffbcross/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/jeffbcross/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "open_issues": 21,
+      "closed_issues": 4,
+      "state": "open",
+      "created_at": "2014-04-03T21:09:34Z",
+      "updated_at": "2014-04-10T21:57:56Z",
+      "due_on": "2014-04-11T07:00:00Z"
+    },
+    "comments": 1,
+    "created_at": "2014-04-10T00:47:05Z",
+    "updated_at": "2014-04-10T10:21:47Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": "https://api.github.com/repos/angular/angular.js/pulls/7067",
+      "html_url": "https://github.com/angular/angular.js/pull/7067",
+      "diff_url": "https://github.com/angular/angular.js/pull/7067.diff",
+      "patch_url": "https://github.com/angular/angular.js/pull/7067.patch"
+    },
+    "body": "Previously, ctreq would possibly reference the incorrect directive name, due to relying on a directiveName living outside of the closure which throws the exception, which can change before the call is ever made.\r\n\r\nThis change saves the current value of directiveName as a property of the link function, which prevents this from occurring.\r\n\r\nCloses #7062\r\nCloses #7059"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7066",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7066/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7066/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7066/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7066",
+    "id": 31205667,
+    "number": 7066,
+    "title": "input[date] should be more flexible in accepting initial values (v1.3.0-beta.5)",
+    "user": {
+      "login": "marshall007",
+      "id": 877936,
+      "avatar_url": "https://avatars.githubusercontent.com/u/877936?",
+      "gravatar_id": "504e31844571b6bdeadf44b878170c88",
+      "url": "https://api.github.com/users/marshall007",
+      "html_url": "https://github.com/marshall007",
+      "followers_url": "https://api.github.com/users/marshall007/followers",
+      "following_url": "https://api.github.com/users/marshall007/following{/other_user}",
+      "gists_url": "https://api.github.com/users/marshall007/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/marshall007/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/marshall007/subscriptions",
+      "organizations_url": "https://api.github.com/users/marshall007/orgs",
+      "repos_url": "https://api.github.com/users/marshall007/repos",
+      "events_url": "https://api.github.com/users/marshall007/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/marshall007/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-04-10T00:10:02Z",
+    "updated_at": "2014-04-10T00:10:05Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "Possibly related to #757\r\n\r\nCurrently the initial value of ngModel must either be a Date object or a ISO-8601 date (yyyy-MM-dd) formatted string. However, the typical JSON representation of dates is `2014-04-09T00:00:00.000Z`. When fetching remote data, the user is forced to manually convert any such properties to Date objects before they can be used as the model.\r\n\r\nWhen the initial ngModel value is a string, I think it makes sense for `input[date]` to handle the conversion to a Date object (and perhaps truncate the time portion)."
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7063",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7063/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7063/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7063/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7063",
+    "id": 31190985,
+    "number": 7063,
+    "title": "ng-resource and ng-repeat memory leak",
+    "user": {
+      "login": "bweston92",
+      "id": 1764057,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1764057?",
+      "gravatar_id": "7e5c3e5fd087554ace10d2ca0206aa79",
+      "url": "https://api.github.com/users/bweston92",
+      "html_url": "https://github.com/bweston92",
+      "followers_url": "https://api.github.com/users/bweston92/followers",
+      "following_url": "https://api.github.com/users/bweston92/following{/other_user}",
+      "gists_url": "https://api.github.com/users/bweston92/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/bweston92/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/bweston92/subscriptions",
+      "organizations_url": "https://api.github.com/users/bweston92/orgs",
+      "repos_url": "https://api.github.com/users/bweston92/repos",
+      "events_url": "https://api.github.com/users/bweston92/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/bweston92/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-04-09T20:19:41Z",
+    "updated_at": "2014-04-09T20:21:14Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "I am currently creating an application that will have a few users 8-9 hours a day, preferably without page reload. (how point of using Angular with push state)\r\n\r\nI use ng-resource in order to call my API server for a collection of items. With these items in my included template from the router config I use ng-repeat in order to iterate over each item. When a user clicks and item the $destroy event is called where I clear the collection data from the scope it doesn't get removed. If I go to the \"show\" view and back to the \"list\" view over and over I see that all the listeners etc are still there memory from the timeline tab on Chrome.\r\n\r\nHow I clear the collection. $scope.collection in an array of results from the ng-resource query.\r\n```\r\n$scope.$on('$destroy', function()\r\n{\r\n  $scope.collection = [];\r\n}\r\n```\r\n\r\nIs this a bug that they're not being removed? If not, can anyone point me in the right direction to learn a bit more about memory management in Angular\r\n\r\nEdit: I am using AngularJS v1.2.16 and NG-Resource v1.2.16"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7062",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7062/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7062/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7062/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7062",
+    "id": 31186805,
+    "number": 7062,
+    "title": "Error showing inaccurate causes: Error: [$compile:ctreq] Controller 'ngModel', required by directive 'ngClick', can't be found!",
+    "user": {
+      "login": "cmplank",
+      "id": 3287605,
+      "avatar_url": "https://avatars.githubusercontent.com/u/3287605?",
+      "gravatar_id": "a0607aea6a6109deb65ac21b5340f54a",
+      "url": "https://api.github.com/users/cmplank",
+      "html_url": "https://github.com/cmplank",
+      "followers_url": "https://api.github.com/users/cmplank/followers",
+      "following_url": "https://api.github.com/users/cmplank/following{/other_user}",
+      "gists_url": "https://api.github.com/users/cmplank/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/cmplank/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/cmplank/subscriptions",
+      "organizations_url": "https://api.github.com/users/cmplank/orgs",
+      "repos_url": "https://api.github.com/users/cmplank/repos",
+      "events_url": "https://api.github.com/users/cmplank/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/cmplank/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/frequency%3A+low",
+        "name": "frequency: low",
+        "color": "bfe5bf"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/severity%3A+inconvenient",
+        "name": "severity: inconvenient",
+        "color": "006b75"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/type%3A+bug",
+        "name": "type: bug",
+        "color": "000000"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": {
+      "url": "https://api.github.com/repos/angular/angular.js/milestones/27",
+      "labels_url": "https://api.github.com/repos/angular/angular.js/milestones/27/labels",
+      "id": 489171,
+      "number": 27,
+      "title": "Backlog",
+      "description": "Holds the backlog of issues and pull requests that have been triaged.\r\n\r\nBefore assigning items to this milestone they should be labelled, at the very least with the correct \"type\" label (i.e. \"issue\", \"pr\", \"bug\", \"regression\", \"chore\", \"docs\", etc).  Preferably you should also check for duplicate issues/PRs, note CLA status and assign \"complexity\" and \"impact\" labels too.",
+      "creator": {
+        "login": "IgorMinar",
+        "id": 216296,
+        "avatar_url": "https://avatars.githubusercontent.com/u/216296?",
+        "gravatar_id": "fc5dc0d579fb554752763792a2d5f449",
+        "url": "https://api.github.com/users/IgorMinar",
+        "html_url": "https://github.com/IgorMinar",
+        "followers_url": "https://api.github.com/users/IgorMinar/followers",
+        "following_url": "https://api.github.com/users/IgorMinar/following{/other_user}",
+        "gists_url": "https://api.github.com/users/IgorMinar/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/IgorMinar/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/IgorMinar/subscriptions",
+        "organizations_url": "https://api.github.com/users/IgorMinar/orgs",
+        "repos_url": "https://api.github.com/users/IgorMinar/repos",
+        "events_url": "https://api.github.com/users/IgorMinar/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/IgorMinar/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "open_issues": 511,
+      "closed_issues": 230,
+      "state": "open",
+      "created_at": "2013-11-18T23:30:35Z",
+      "updated_at": "2014-04-10T21:57:56Z",
+      "due_on": null
+    },
+    "comments": 3,
+    "created_at": "2014-04-09T19:23:37Z",
+    "updated_at": "2014-04-10T00:47:05Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "This short fiddle http://jsfiddle.net/x3EtD/7/ shows errors in the console, but they are indicating a problem that doesn't exist. Namely, that the 'ngClick' directive requires 'ngModel' which it doesn't. There seems to be a bug with the way angular is filling in the blanks for this error message.\r\n\r\nThe problem in this case is that a custom directive that requires ngModel has been created for all input elements, but the checkbox in the example doesn't have one. Ironically, it doesn't actually break any functionality but spews out misleading errors in the console. Changing `requires: 'ngModel'` to `requires: '?ngModel'` takes care of the error in the fiddle.\r\n\r\nTracking this down was difficult as the errors pointed so explicitly to a problem with my use of ng-click rather than the real culprit.\r\n\r\nI suspect that the error should say `Error: [$compile:ctreq] Controller 'ngModel', required by directive 'input', can't be found!`\r\n\r\nOS: Ubuntu 12.04\r\nBrowsers: Chromium 33, Firefox 28\r\nAngular versions tested: 1.2.1, 1.2.15"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7060",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7060/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7060/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7060/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7060",
+    "id": 31167225,
+    "number": 7060,
+    "title": "download docs: cant see sample html",
+    "user": {
+      "login": "peter-mouland",
+      "id": 1727939,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1727939?",
+      "gravatar_id": "ed316c83afeb41de7011068f1f7f0b1f",
+      "url": "https://api.github.com/users/peter-mouland",
+      "html_url": "https://github.com/peter-mouland",
+      "followers_url": "https://api.github.com/users/peter-mouland/followers",
+      "following_url": "https://api.github.com/users/peter-mouland/following{/other_user}",
+      "gists_url": "https://api.github.com/users/peter-mouland/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/peter-mouland/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/peter-mouland/subscriptions",
+      "organizations_url": "https://api.github.com/users/peter-mouland/orgs",
+      "repos_url": "https://api.github.com/users/peter-mouland/repos",
+      "events_url": "https://api.github.com/users/peter-mouland/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/peter-mouland/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/type%3A+bug",
+        "name": "type: bug",
+        "color": "000000"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/type%3A+docs",
+        "name": "type: docs",
+        "color": "9fe6ad"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-04-09T15:27:26Z",
+    "updated_at": "2014-04-09T21:30:54Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "http://docs.angularjs.org/misc/downloading\r\n\r\nShould the `<` be replaced with `&lt;` or is there a different method you have been using?"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7059",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7059/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7059/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7059/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7059",
+    "id": 31155229,
+    "number": 7059,
+    "title": "Controller name and directive name swapped: Controller 'fooBar', required by directive 'uiTreeNodes', can't be found!",
+    "user": {
+      "login": "jrencz",
+      "id": 948356,
+      "avatar_url": "https://avatars.githubusercontent.com/u/948356?",
+      "gravatar_id": "0a30c1427813e0a69c91b0f81e8d0b08",
+      "url": "https://api.github.com/users/jrencz",
+      "html_url": "https://github.com/jrencz",
+      "followers_url": "https://api.github.com/users/jrencz/followers",
+      "following_url": "https://api.github.com/users/jrencz/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jrencz/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jrencz/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jrencz/subscriptions",
+      "organizations_url": "https://api.github.com/users/jrencz/orgs",
+      "repos_url": "https://api.github.com/users/jrencz/repos",
+      "events_url": "https://api.github.com/users/jrencz/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jrencz/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/frequency%3A+low",
+        "name": "frequency: low",
+        "color": "bfe5bf"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/severity%3A+inconvenient",
+        "name": "severity: inconvenient",
+        "color": "006b75"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/type%3A+bug",
+        "name": "type: bug",
+        "color": "000000"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": {
+      "url": "https://api.github.com/repos/angular/angular.js/milestones/27",
+      "labels_url": "https://api.github.com/repos/angular/angular.js/milestones/27/labels",
+      "id": 489171,
+      "number": 27,
+      "title": "Backlog",
+      "description": "Holds the backlog of issues and pull requests that have been triaged.\r\n\r\nBefore assigning items to this milestone they should be labelled, at the very least with the correct \"type\" label (i.e. \"issue\", \"pr\", \"bug\", \"regression\", \"chore\", \"docs\", etc).  Preferably you should also check for duplicate issues/PRs, note CLA status and assign \"complexity\" and \"impact\" labels too.",
+      "creator": {
+        "login": "IgorMinar",
+        "id": 216296,
+        "avatar_url": "https://avatars.githubusercontent.com/u/216296?",
+        "gravatar_id": "fc5dc0d579fb554752763792a2d5f449",
+        "url": "https://api.github.com/users/IgorMinar",
+        "html_url": "https://github.com/IgorMinar",
+        "followers_url": "https://api.github.com/users/IgorMinar/followers",
+        "following_url": "https://api.github.com/users/IgorMinar/following{/other_user}",
+        "gists_url": "https://api.github.com/users/IgorMinar/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/IgorMinar/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/IgorMinar/subscriptions",
+        "organizations_url": "https://api.github.com/users/IgorMinar/orgs",
+        "repos_url": "https://api.github.com/users/IgorMinar/repos",
+        "events_url": "https://api.github.com/users/IgorMinar/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/IgorMinar/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "open_issues": 511,
+      "closed_issues": 230,
+      "state": "open",
+      "created_at": "2013-11-18T23:30:35Z",
+      "updated_at": "2014-04-10T21:57:56Z",
+      "due_on": null
+    },
+    "comments": 3,
+    "created_at": "2014-04-09T13:07:33Z",
+    "updated_at": "2014-04-10T10:21:47Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "I'm getting an error like this:\r\n\r\n    Controller 'fooBar', required by directive 'uiTreeNodes', can't be found!\r\n\r\n`fooBar` is my own directive\r\n`uiTreeNodes` is a directive (and a controller) in https://github.com/JimLiu/angular-ui-tree\r\n\r\nI'm using 1.3.0-beta.5\r\n\r\nit looks like strings have been swapped"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7057",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7057/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7057/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7057/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7057",
+    "id": 31144801,
+    "number": 7057,
+    "title": "ng-switch-when not working properly",
+    "user": {
+      "login": "tmundt",
+      "id": 2527691,
+      "avatar_url": "https://avatars.githubusercontent.com/u/2527691?",
+      "gravatar_id": "915aa3f195f4d8f1fc1845093e2af08b",
+      "url": "https://api.github.com/users/tmundt",
+      "html_url": "https://github.com/tmundt",
+      "followers_url": "https://api.github.com/users/tmundt/followers",
+      "following_url": "https://api.github.com/users/tmundt/following{/other_user}",
+      "gists_url": "https://api.github.com/users/tmundt/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/tmundt/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/tmundt/subscriptions",
+      "organizations_url": "https://api.github.com/users/tmundt/orgs",
+      "repos_url": "https://api.github.com/users/tmundt/repos",
+      "events_url": "https://api.github.com/users/tmundt/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/tmundt/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 3,
+    "created_at": "2014-04-09T10:12:11Z",
+    "updated_at": "2014-04-11T00:40:08Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "I have to roll back to version 1.2.11 (from 1.2.16) of angularJS as ng-switch-when did stop working properly.\r\nI have radio buttons setting different values. Depending on these values some input fields are shown (or not):\r\n\r\n```html\r\n<input type=\"radio\" ng-model=\"paySelect\" value=\"DirectDebiting\" ng-change=\"resetPayment(); updateCount();\" /> Bankeinzug<input type=\"radio\" ng-model=\"paySelect\" value=\"CreditCard\" ng-change=\"resetPayment(); updateCount();\" /> Kreditkarte\r\n<input type=\"radio\" ng-model=\"paySelect\" value=\"DecideLater\" ng-change=\"resetPayment(); updateCount();\" /> Später angeben\r\n\r\n<div class=\"form-group with-help\" ng-switch-when=\"DirectDebiting\" name=\"bankForm\"...>\r\n<div class=\"form-group\" ng-switch-when=\"CreditCard\"...>\r\n```\r\n\r\n\r\nWhen I click at the radio buttons an error message pops saying:\r\n\"TypeError: Cannot call method 'remove' of undefined\"\r\nAs mentioned this error does not occur when I use version 1.2.11."
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7056",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7056/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7056/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7056/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7056",
+    "id": 31140738,
+    "number": 7056,
+    "title": "Stop using beforeEach(module(\"myModule\")); in documentation",
+    "user": {
+      "login": "lastnico",
+      "id": 1044941,
+      "avatar_url": "https://avatars.githubusercontent.com/u/1044941?",
+      "gravatar_id": "a3cc4dd617bd100e01143b888bce9aec",
+      "url": "https://api.github.com/users/lastnico",
+      "html_url": "https://github.com/lastnico",
+      "followers_url": "https://api.github.com/users/lastnico/followers",
+      "following_url": "https://api.github.com/users/lastnico/following{/other_user}",
+      "gists_url": "https://api.github.com/users/lastnico/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/lastnico/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/lastnico/subscriptions",
+      "organizations_url": "https://api.github.com/users/lastnico/orgs",
+      "repos_url": "https://api.github.com/users/lastnico/repos",
+      "events_url": "https://api.github.com/users/lastnico/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/lastnico/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-04-09T09:08:13Z",
+    "updated_at": "2014-04-09T09:09:41Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "Hi,\r\n\r\nAs you can see in the following Plunkr, the way most AngularJs unit tests and documentations are written is wrong when it's about loading a module in a beforeEach() function.\r\n\r\nMost of the documentation refers to\r\n\r\n```javascript\r\nbeforeEach(module('aModule'));\r\n```\r\n\r\nwhile the right way of loading a module *before each* \"it\" spec is the following:\r\n\r\n```javascript\r\nbeforeEach(function() {\r\n  module('aModule');\r\n});\r\n```\r\n\r\nThis is particularly annoying when you rely on stateful singleton (service, factory), that can have side effects since the module is not entirely reloaded after each it.\r\n\r\nI would then say, for the sake of lisibility, that the first way of writing should be replaced by the second one, or at least to clearly explain in the documentation the fast that the first method, even if shorter, might have side effects.\r\n\r\nhttp://plnkr.co/edit/EmmAuoQLTFj8Hiie9u2X?p=preview\r\n"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7054",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7054/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7054/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7054/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7054",
+    "id": 31138561,
+    "number": 7054,
+    "title": "Error in $location.path(path) with integer argument",
+    "user": {
+      "login": "darkoromanov",
+      "id": 711784,
+      "avatar_url": "https://avatars.githubusercontent.com/u/711784?",
+      "gravatar_id": "8be50fdd8e40ee58648f31c1860fe483",
+      "url": "https://api.github.com/users/darkoromanov",
+      "html_url": "https://github.com/darkoromanov",
+      "followers_url": "https://api.github.com/users/darkoromanov/followers",
+      "following_url": "https://api.github.com/users/darkoromanov/following{/other_user}",
+      "gists_url": "https://api.github.com/users/darkoromanov/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/darkoromanov/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/darkoromanov/subscriptions",
+      "organizations_url": "https://api.github.com/users/darkoromanov/orgs",
+      "repos_url": "https://api.github.com/users/darkoromanov/repos",
+      "events_url": "https://api.github.com/users/darkoromanov/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/darkoromanov/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-04-09T08:34:05Z",
+    "updated_at": "2014-04-09T08:34:08Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "$location.path(1) throws an error if the argument is integer, should you cast the argument in the Angular.js core?\r\n\r\n```\r\nTypeError: Object 1 has no method 'charAt'\r\n    at http://code.angularjs.org/1.2.13/angular.js:9034:17\r\n    at Object.path (http://code.angularjs.org/1.2.13/angular.js:9129:22)\r\n    at site.saveRud.then.$.growl.error.message (http://ruds4.local/js/controllers.js:351:27)\r\n    at wrappedCallback (http://code.angularjs.org/1.2.13/angular.js:11033:81)\r\n    at http://code.angularjs.org/1.2.13/angular.js:11119:26\r\n    at Scope.$eval (http://code.angularjs.org/1.2.13/angular.js:12045:28)\r\n    at Scope.$digest (http://code.angularjs.org/1.2.13/angular.js:11871:31)\r\n    at Scope.$apply (http://code.angularjs.org/1.2.13/angular.js:12151:24)\r\n    at done (http://code.angularjs.org/1.2.13/angular.js:7909:45)\r\n    at completeRequest (http://code.angularjs.org/1.2.13/angular.js:8110:7) \r\n\r\n````"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7053",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7053/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7053/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7053/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7053",
+    "id": 31135852,
+    "number": 7053,
+    "title": "delay on $routeProvider in main controller",
+    "user": {
+      "login": "plong0",
+      "id": 584954,
+      "avatar_url": "https://avatars.githubusercontent.com/u/584954?",
+      "gravatar_id": "c662d50ddec965b6699c573afadb9ed7",
+      "url": "https://api.github.com/users/plong0",
+      "html_url": "https://github.com/plong0",
+      "followers_url": "https://api.github.com/users/plong0/followers",
+      "following_url": "https://api.github.com/users/plong0/following{/other_user}",
+      "gists_url": "https://api.github.com/users/plong0/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/plong0/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/plong0/subscriptions",
+      "organizations_url": "https://api.github.com/users/plong0/orgs",
+      "repos_url": "https://api.github.com/users/plong0/repos",
+      "events_url": "https://api.github.com/users/plong0/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/plong0/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-04-09T07:44:39Z",
+    "updated_at": "2014-04-09T07:45:27Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "Assuming I have in my index.html file:\r\n\r\n    <html ng-app=\"MyModule\" ng-controller=\"MainCtrl\">\r\n\r\nand a MainCtrl looking like:\r\n```\r\nangular.module('MyModule')\r\n  .controller('MainCtrl', function ($scope, $routeParams) {\r\n      console.log('routeParams:'+JSON.stringify($routeParams));\r\n  });\r\n```\r\n\r\n$routeParams is coming up empty... unless I wrap it in a very short timeout:\r\n```\r\nangular.module('MyModule')\r\n  .controller('MainCtrl', function ($scope, $routeParams, $timeout) {\r\n    $timeout(function(){\r\n      // do stuff with $routeParams\r\n      console.log('routeParams:'+JSON.stringify($routeParams));\r\n    }, 20);\r\n  });\r\n```\r\n\r\nI didn't experience the problem when I used yo cg-angular to generate my project, but started experiencing it after I rebuilt my project using yo angular-fullstack\r\n\r\nA couple others having similar trouble: http://stackoverflow.com/questions/17519937/routeparams-is-empty-in-main-controller/22955711"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7051",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7051/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7051/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7051/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7051",
+    "id": 31119935,
+    "number": 7051,
+    "title": "ng-attr vs attribute is different in FF",
+    "user": {
+      "login": "jbedard",
+      "id": 89246,
+      "avatar_url": "https://avatars.githubusercontent.com/u/89246?",
+      "gravatar_id": null,
+      "url": "https://api.github.com/users/jbedard",
+      "html_url": "https://github.com/jbedard",
+      "followers_url": "https://api.github.com/users/jbedard/followers",
+      "following_url": "https://api.github.com/users/jbedard/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jbedard/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jbedard/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jbedard/subscriptions",
+      "organizations_url": "https://api.github.com/users/jbedard/orgs",
+      "repos_url": "https://api.github.com/users/jbedard/repos",
+      "events_url": "https://api.github.com/users/jbedard/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jbedard/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/browser%3A+Firefox",
+        "name": "browser: Firefox",
+        "color": "5319e7"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/frequency%3A+moderate",
+        "name": "frequency: moderate",
+        "color": "fef2c0"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/severity%3A+inconvenient",
+        "name": "severity: inconvenient",
+        "color": "006b75"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/type%3A+bug",
+        "name": "type: bug",
+        "color": "000000"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": {
+      "url": "https://api.github.com/repos/angular/angular.js/milestones/27",
+      "labels_url": "https://api.github.com/repos/angular/angular.js/milestones/27/labels",
+      "id": 489171,
+      "number": 27,
+      "title": "Backlog",
+      "description": "Holds the backlog of issues and pull requests that have been triaged.\r\n\r\nBefore assigning items to this milestone they should be labelled, at the very least with the correct \"type\" label (i.e. \"issue\", \"pr\", \"bug\", \"regression\", \"chore\", \"docs\", etc).  Preferably you should also check for duplicate issues/PRs, note CLA status and assign \"complexity\" and \"impact\" labels too.",
+      "creator": {
+        "login": "IgorMinar",
+        "id": 216296,
+        "avatar_url": "https://avatars.githubusercontent.com/u/216296?",
+        "gravatar_id": "fc5dc0d579fb554752763792a2d5f449",
+        "url": "https://api.github.com/users/IgorMinar",
+        "html_url": "https://github.com/IgorMinar",
+        "followers_url": "https://api.github.com/users/IgorMinar/followers",
+        "following_url": "https://api.github.com/users/IgorMinar/following{/other_user}",
+        "gists_url": "https://api.github.com/users/IgorMinar/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/IgorMinar/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/IgorMinar/subscriptions",
+        "organizations_url": "https://api.github.com/users/IgorMinar/orgs",
+        "repos_url": "https://api.github.com/users/IgorMinar/repos",
+        "events_url": "https://api.github.com/users/IgorMinar/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/IgorMinar/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "open_issues": 511,
+      "closed_issues": 230,
+      "state": "open",
+      "created_at": "2013-11-18T23:30:35Z",
+      "updated_at": "2014-04-10T21:57:56Z",
+      "due_on": null
+    },
+    "comments": 0,
+    "created_at": "2014-04-09T00:01:14Z",
+    "updated_at": "2014-04-09T23:59:06Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "I have an <input> where I want the default size to be 1 until the ng-attr-size is calculated.\r\n```\r\n    <input size=\"1\" ng-attr-size=\"{{calculatedSize}}\" />\r\n```\r\nIn most browsers the Element.attributes seems to be in the order that the attributes are specified in the DOM. In FF the Element.attributes order does not seem to reflect the DOM order.\r\n\r\nng-attr copies ng-attr-name values into the $attrs under the \"name\" so they will be evaluated on the first digest, but in FF the size=\"1\" overrides the ng-attr-size so the ng-attr expression never gets evaluated.\r\n\r\nIs this expected? Maybe an error/warning logged when an attribute overrides another would be the best solution?\r\n\r\nHere's a simple example that is different in FF vs chrome/ie (the example uses value instead of size): http://jsfiddle.net/ZNPPH/2/"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7049",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7049/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7049/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7049/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7049",
+    "id": 31104394,
+    "number": 7049,
+    "title": "Setting action property of a tab generates exception",
+    "user": {
+      "login": "jetpad",
+      "id": 135269,
+      "avatar_url": "https://avatars.githubusercontent.com/u/135269?",
+      "gravatar_id": "f5bb56afa5a497dfcb8425ab15c4c781",
+      "url": "https://api.github.com/users/jetpad",
+      "html_url": "https://github.com/jetpad",
+      "followers_url": "https://api.github.com/users/jetpad/followers",
+      "following_url": "https://api.github.com/users/jetpad/following{/other_user}",
+      "gists_url": "https://api.github.com/users/jetpad/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/jetpad/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/jetpad/subscriptions",
+      "organizations_url": "https://api.github.com/users/jetpad/orgs",
+      "repos_url": "https://api.github.com/users/jetpad/repos",
+      "events_url": "https://api.github.com/users/jetpad/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/jetpad/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2014-04-08T20:09:23Z",
+    "updated_at": "2014-04-09T18:14:30Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "I was attempting to make the tabs of a tabset reflect the correct state by something like:\r\n\r\n\r\n   &lt; tabset>\r\n    &lt; tab heading=\"Child 1\" ui-sref=\"home.child1\" active=\"'home.child1' | isState\" > &lt; /tab>\r\n    &lt; tab heading=\"Child 2\" ui-sref=\"home.child2\" active=\"'home.child2' | isState\" > &lt; /tab>\r\n    &lt; tab heading=\"Child 3\" ui-sref=\"home.child3\" active=\"'home.child3' | isState\" > &lt; /tab>\r\n  &lt; /tabset>\r\n\r\nIt mostly works but has the side effect of generating an exception. \r\n\r\nhttp://plnkr.co/y7U0r0E9euj7x8te47lE"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7047",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7047/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7047/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7047/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7047",
+    "id": 31097411,
+    "number": 7047,
+    "title": "ngOptions required ngModel",
+    "user": {
+      "login": "reidreid46",
+      "id": 164842,
+      "avatar_url": "https://avatars.githubusercontent.com/u/164842?",
+      "gravatar_id": "356d485fff80b770daf584e4781b970d",
+      "url": "https://api.github.com/users/reidreid46",
+      "html_url": "https://github.com/reidreid46",
+      "followers_url": "https://api.github.com/users/reidreid46/followers",
+      "following_url": "https://api.github.com/users/reidreid46/following{/other_user}",
+      "gists_url": "https://api.github.com/users/reidreid46/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/reidreid46/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/reidreid46/subscriptions",
+      "organizations_url": "https://api.github.com/users/reidreid46/orgs",
+      "repos_url": "https://api.github.com/users/reidreid46/repos",
+      "events_url": "https://api.github.com/users/reidreid46/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/reidreid46/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/component%3A+forms",
+        "name": "component: forms",
+        "color": "7B947B"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/needs%3A+work",
+        "name": "needs: work",
+        "color": "fbca04"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": {
+      "url": "https://api.github.com/repos/angular/angular.js/milestones/32",
+      "labels_url": "https://api.github.com/repos/angular/angular.js/milestones/32/labels",
+      "id": 510155,
+      "number": 32,
+      "title": "1.3.0",
+      "description": "Backlog of issues we want to take care of in 1.3.0-beta.x builds",
+      "creator": {
+        "login": "tbosch",
+        "id": 690815,
+        "avatar_url": "https://avatars.githubusercontent.com/u/690815?",
+        "gravatar_id": "2735fe44c5f69fa5a1d2c256e051203a",
+        "url": "https://api.github.com/users/tbosch",
+        "html_url": "https://github.com/tbosch",
+        "followers_url": "https://api.github.com/users/tbosch/followers",
+        "following_url": "https://api.github.com/users/tbosch/following{/other_user}",
+        "gists_url": "https://api.github.com/users/tbosch/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/tbosch/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/tbosch/subscriptions",
+        "organizations_url": "https://api.github.com/users/tbosch/orgs",
+        "repos_url": "https://api.github.com/users/tbosch/repos",
+        "events_url": "https://api.github.com/users/tbosch/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/tbosch/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "open_issues": 113,
+      "closed_issues": 33,
+      "state": "open",
+      "created_at": "2013-12-10T19:41:50Z",
+      "updated_at": "2014-04-10T21:57:56Z",
+      "due_on": null
+    },
+    "comments": 3,
+    "created_at": "2014-04-08T18:46:05Z",
+    "updated_at": "2014-04-08T20:43:58Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "ngModel is required to see any output put into a ngOptions. If ngModel is ommitted, no options are created, and no warning is given.\r\n\r\nPossible to?:\r\na) not require ngModel, display options regardless\r\nb) or show some kind of warning when ngOptions is used without ngModel"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7046",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7046/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7046/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7046/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7046",
+    "id": 31096900,
+    "number": 7046,
+    "title": "updation in angular.element function and adding an example",
+    "user": {
+      "login": "deshdeepakyadav",
+      "id": 7212499,
+      "avatar_url": "https://avatars.githubusercontent.com/u/7212499?",
+      "gravatar_id": "b64597022fe353dc958dec954c09185d",
+      "url": "https://api.github.com/users/deshdeepakyadav",
+      "html_url": "https://github.com/deshdeepakyadav",
+      "followers_url": "https://api.github.com/users/deshdeepakyadav/followers",
+      "following_url": "https://api.github.com/users/deshdeepakyadav/following{/other_user}",
+      "gists_url": "https://api.github.com/users/deshdeepakyadav/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/deshdeepakyadav/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/deshdeepakyadav/subscriptions",
+      "organizations_url": "https://api.github.com/users/deshdeepakyadav/orgs",
+      "repos_url": "https://api.github.com/users/deshdeepakyadav/repos",
+      "events_url": "https://api.github.com/users/deshdeepakyadav/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/deshdeepakyadav/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-04-08T18:39:34Z",
+    "updated_at": "2014-04-08T18:39:37Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "Hi, \r\nangular.element(); function is explaining about calling some jquery methods without calling any jquery js file and it's mentioned as jqlite in angular js. a lot of methods are given in descriptions. but there is not provided any way to access these methods. only usages given like angular.element(element); it's not so much clear I want to add one more line to access these function as following:\r\nangular.element(document.querySelector('element')).jqlite-methods;\r\nNote: Also you can add this function should be define in controller section;\r\n\r\nIf you add any example regarding this it will be more clear for everyone. I am providing here an example code -  http://plnkr.co/edit/PrNPitUblfUAKj6XgIm5\r\nif you find suitable then please add this also in docs.\r\n\r\n"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7042",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7042/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7042/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7042/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7042",
+    "id": 31062941,
+    "number": 7042,
+    "title": "Model not updating when dynamic select element is manipulated via arrow keys",
+    "user": {
+      "login": "BiAiB",
+      "id": 294167,
+      "avatar_url": "https://avatars.githubusercontent.com/u/294167?",
+      "gravatar_id": "dc3dd6a2e894d8fc4e1190ee86d63d32",
+      "url": "https://api.github.com/users/BiAiB",
+      "html_url": "https://github.com/BiAiB",
+      "followers_url": "https://api.github.com/users/BiAiB/followers",
+      "following_url": "https://api.github.com/users/BiAiB/following{/other_user}",
+      "gists_url": "https://api.github.com/users/BiAiB/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/BiAiB/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/BiAiB/subscriptions",
+      "organizations_url": "https://api.github.com/users/BiAiB/orgs",
+      "repos_url": "https://api.github.com/users/BiAiB/repos",
+      "events_url": "https://api.github.com/users/BiAiB/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/BiAiB/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2014-04-08T11:36:06Z",
+    "updated_at": "2014-04-10T16:02:41Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "**Steps**\r\n1. have a select which all options are generated from ng-options\r\n2. focus the select (but do not select any option yet)\r\n3. type \"T\"\r\n4. type \"T\" again\r\n\r\n**What should happen?**\r\nat step 3, the model should be \"TN\"\r\nat step 4, the model should change to \"TX\"\r\n\r\n*What happens and should not?*\r\nat step 4, the model stays to \"TX\"\r\n\r\n**Environment**\r\nChrome 33 , angular 1.2 or beta 1.3\r\n\r\n**demonstration** (taken from https://github.com/angular/angular.js/issues/2230):\r\nhttp://jsfiddle.net/ADukg/5116/\r\nor http://plnkr.co/edit/2R9YM6KF01bye4kPeoZL?p=preview\r\n\r\n**work around**\r\n1. hard code the empty item `<option value=\"\" />` inside the select\r\n2. trigger a change event on keystrokes: `$(document).on( 'keyup', 'select', function(){$(this).trigger('change')} );`\r\n\r\n**related**\r\n* https://github.com/angular/angular.js/issues/4216\r\n* https://github.com/angular/angular.js/issues/2230"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7041",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7041/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7041/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7041/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7041",
+    "id": 31058081,
+    "number": 7041,
+    "title": "Digest ng-repeat after manual DOM manipulation causes disorganized list",
+    "user": {
+      "login": "XavierBoubert",
+      "id": 482251,
+      "avatar_url": "https://avatars.githubusercontent.com/u/482251?",
+      "gravatar_id": "9e38451efa23937301594f273033c5f1",
+      "url": "https://api.github.com/users/XavierBoubert",
+      "html_url": "https://github.com/XavierBoubert",
+      "followers_url": "https://api.github.com/users/XavierBoubert/followers",
+      "following_url": "https://api.github.com/users/XavierBoubert/following{/other_user}",
+      "gists_url": "https://api.github.com/users/XavierBoubert/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/XavierBoubert/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/XavierBoubert/subscriptions",
+      "organizations_url": "https://api.github.com/users/XavierBoubert/orgs",
+      "repos_url": "https://api.github.com/users/XavierBoubert/repos",
+      "events_url": "https://api.github.com/users/XavierBoubert/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/XavierBoubert/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/component%3A+ngRepeat",
+        "name": "component: ngRepeat",
+        "color": "fef2c0"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/frequency%3A+high",
+        "name": "frequency: high",
+        "color": "f7c6c7"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/severity%3A+broken+expected+use",
+        "name": "severity: broken expected use",
+        "color": "fbda00"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/type%3A+bug",
+        "name": "type: bug",
+        "color": "000000"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": {
+      "url": "https://api.github.com/repos/angular/angular.js/milestones/32",
+      "labels_url": "https://api.github.com/repos/angular/angular.js/milestones/32/labels",
+      "id": 510155,
+      "number": 32,
+      "title": "1.3.0",
+      "description": "Backlog of issues we want to take care of in 1.3.0-beta.x builds",
+      "creator": {
+        "login": "tbosch",
+        "id": 690815,
+        "avatar_url": "https://avatars.githubusercontent.com/u/690815?",
+        "gravatar_id": "2735fe44c5f69fa5a1d2c256e051203a",
+        "url": "https://api.github.com/users/tbosch",
+        "html_url": "https://github.com/tbosch",
+        "followers_url": "https://api.github.com/users/tbosch/followers",
+        "following_url": "https://api.github.com/users/tbosch/following{/other_user}",
+        "gists_url": "https://api.github.com/users/tbosch/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/tbosch/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/tbosch/subscriptions",
+        "organizations_url": "https://api.github.com/users/tbosch/orgs",
+        "repos_url": "https://api.github.com/users/tbosch/repos",
+        "events_url": "https://api.github.com/users/tbosch/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/tbosch/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "open_issues": 113,
+      "closed_issues": 33,
+      "state": "open",
+      "created_at": "2013-12-10T19:41:50Z",
+      "updated_at": "2014-04-10T21:57:56Z",
+      "due_on": null
+    },
+    "comments": 3,
+    "created_at": "2014-04-08T10:11:12Z",
+    "updated_at": "2014-04-09T23:42:01Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "I'm using AngularJS 1.2.16.\r\n\r\n1. I have made 3 ng-repeat wrapped into each other based on $scope object\r\n2. With a button I move one of the last ng-repeat list element after the last element in jQuery, not within a Digest\r\n3. With another button I reverse all $scope elements in last ng-repeat list then Digest is fired.\r\n\r\nAfter that, I expecting to have all the initial elements in reverse order in my view. But I have a disorganized elements list.\r\n\r\nHere is a demo to try: http://jsfiddle.net/xavierboubert/4AvQG/7/\r\nLook at the list of Items, click \"Modif DOM please\" then click \"Reverse please\".\r\n\r\n(In a real project, I'm using jQuery UI with a customized sortable with multiple elements)\r\n"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7040",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7040/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7040/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7040/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7040",
+    "id": 31056513,
+    "number": 7040,
+    "title": "Ghost click with ngTouch on Android 2.3",
+    "user": {
+      "login": "Smurf81",
+      "id": 4280106,
+      "avatar_url": "https://avatars.githubusercontent.com/u/4280106?",
+      "gravatar_id": "88d01776e516b9cc93663b7d553151fe",
+      "url": "https://api.github.com/users/Smurf81",
+      "html_url": "https://github.com/Smurf81",
+      "followers_url": "https://api.github.com/users/Smurf81/followers",
+      "following_url": "https://api.github.com/users/Smurf81/following{/other_user}",
+      "gists_url": "https://api.github.com/users/Smurf81/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/Smurf81/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/Smurf81/subscriptions",
+      "organizations_url": "https://api.github.com/users/Smurf81/orgs",
+      "repos_url": "https://api.github.com/users/Smurf81/repos",
+      "events_url": "https://api.github.com/users/Smurf81/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/Smurf81/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2014-04-08T09:46:14Z",
+    "updated_at": "2014-04-08T09:46:17Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "Hi,\r\n\r\non android 2.3 browser I found a problem with ngTouch. \r\nA ghost click appears when clicking on an element and select the element behind.\r\n\r\nExemple :\r\nbug here on android 2.3 with ngTouch : http://goo.gl/5JNQIG\r\nsame exemple without ngTouch : http://goo.gl/5X9tlS\r\n\r\nMy two cents workaround : add a timeout when clicking on the button"
+  },
+  {
+    "url": "https://api.github.com/repos/angular/angular.js/issues/7037",
+    "labels_url": "https://api.github.com/repos/angular/angular.js/issues/7037/labels{/name}",
+    "comments_url": "https://api.github.com/repos/angular/angular.js/issues/7037/comments",
+    "events_url": "https://api.github.com/repos/angular/angular.js/issues/7037/events",
+    "html_url": "https://github.com/angular/angular.js/issues/7037",
+    "id": 31037857,
+    "number": 7037,
+    "title": "HTTP 201 Created is not handled ",
+    "user": {
+      "login": "okigan",
+      "id": 478302,
+      "avatar_url": "https://avatars.githubusercontent.com/u/478302?",
+      "gravatar_id": "5ad139c45c44036b5fc275cb1927df14",
+      "url": "https://api.github.com/users/okigan",
+      "html_url": "https://github.com/okigan",
+      "followers_url": "https://api.github.com/users/okigan/followers",
+      "following_url": "https://api.github.com/users/okigan/following{/other_user}",
+      "gists_url": "https://api.github.com/users/okigan/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/okigan/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/okigan/subscriptions",
+      "organizations_url": "https://api.github.com/users/okigan/orgs",
+      "repos_url": "https://api.github.com/users/okigan/repos",
+      "events_url": "https://api.github.com/users/okigan/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/okigan/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "labels": [
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/component%3A+ngResource",
+        "name": "component: ngResource",
+        "color": "0b02e1"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/frequency%3A+low",
+        "name": "frequency: low",
+        "color": "bfe5bf"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/gh%3A+issue",
+        "name": "gh: issue",
+        "color": "5319e7"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/severity%3A+confusing",
+        "name": "severity: confusing",
+        "color": "cd19e7"
+      },
+      {
+        "url": "https://api.github.com/repos/angular/angular.js/labels/type%3A+feature",
+        "name": "type: feature",
+        "color": "00a606"
+      }
+    ],
+    "state": "open",
+    "assignee": null,
+    "milestone": {
+      "url": "https://api.github.com/repos/angular/angular.js/milestones/27",
+      "labels_url": "https://api.github.com/repos/angular/angular.js/milestones/27/labels",
+      "id": 489171,
+      "number": 27,
+      "title": "Backlog",
+      "description": "Holds the backlog of issues and pull requests that have been triaged.\r\n\r\nBefore assigning items to this milestone they should be labelled, at the very least with the correct \"type\" label (i.e. \"issue\", \"pr\", \"bug\", \"regression\", \"chore\", \"docs\", etc).  Preferably you should also check for duplicate issues/PRs, note CLA status and assign \"complexity\" and \"impact\" labels too.",
+      "creator": {
+        "login": "IgorMinar",
+        "id": 216296,
+        "avatar_url": "https://avatars.githubusercontent.com/u/216296?",
+        "gravatar_id": "fc5dc0d579fb554752763792a2d5f449",
+        "url": "https://api.github.com/users/IgorMinar",
+        "html_url": "https://github.com/IgorMinar",
+        "followers_url": "https://api.github.com/users/IgorMinar/followers",
+        "following_url": "https://api.github.com/users/IgorMinar/following{/other_user}",
+        "gists_url": "https://api.github.com/users/IgorMinar/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/IgorMinar/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/IgorMinar/subscriptions",
+        "organizations_url": "https://api.github.com/users/IgorMinar/orgs",
+        "repos_url": "https://api.github.com/users/IgorMinar/repos",
+        "events_url": "https://api.github.com/users/IgorMinar/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/IgorMinar/received_events",
+        "type": "User",
+        "site_admin": false
+      },
+      "open_issues": 511,
+      "closed_issues": 230,
+      "state": "open",
+      "created_at": "2013-11-18T23:30:35Z",
+      "updated_at": "2014-04-10T21:57:56Z",
+      "due_on": null
+    },
+    "comments": 2,
+    "created_at": "2014-04-08T02:08:05Z",
+    "updated_at": "2014-04-10T00:26:40Z",
+    "closed_at": null,
+    "pull_request": {
+      "url": null,
+      "html_url": null,
+      "diff_url": null,
+      "patch_url": null
+    },
+    "body": "This is similar to  #2572, but with different fix proposal:\r\n\r\nPer the HTTP spec POST request returns '201 Created' with URI for the resource in the \"Location\" header field.\r\n\r\nRight now this situation is not handled by $resource factory. Also the location property is invaluable to get updated state of the resource. \r\n\r\nSo propose to make the \"Location\" property available from the $resource service. "
+  }
+]

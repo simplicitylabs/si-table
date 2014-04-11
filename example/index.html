@@ -15,22 +15,15 @@
                 <h1>SiTable Example</h1>
             </div>
 
-            <div ng-controller="ExampleCtrl">
+            <div class="row">
+                <div class="col-sm-6">
+                    <p>Simple example where all the data is <em>downloaded
+                    once</em>. All sorting and filtering is handled on the
+                    client side.
+                </div>
+            </div>
 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Age</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Mikael</td>
-                            <td>25</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div ng-controller="ExampleCtrl">
 
                 <form class="form">
                     <div class="form-group">
@@ -39,31 +32,31 @@
                     </div>
                 </form>
 
-                {{ sortBy }}
-
-                <table class="table" si-table pagination="10" pagination-length="10" sorting="sortBy">
+                <table class="table" si-table sorting="sortBy">
                     <thead>
                         <tr>
-                            <th sort-by="id">ID</th>
-                            <th sort-by="testRun.testCase.name">Name</th>
-                            <th>Module</th>
-                            <th sort-by="testRun.status">Status</th>
+                            <th sort-by="number">#</th>
+                            <th sort-by="title">Title</th>
+                            <th sort-by="user.login">User</th>
+                            <th sort-by="created_at">Created At</th>
+                            <th>Labels</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr ng-repeat="trjm in tableData | filter:filter">
-                            <td>{{ trjm.id }}</td>
+                        <tr ng-repeat="issue in issues | filter:filter">
+                            <td class="text-muted">#{{ issue.number }}</td>
+                            <td><strong><a href="{{ issue.html_url }}">{{ issue.title }}</a></strong></td>
+                            <td><a href="{{ issue.user.html_url }}">{{ issue.user.login }}</td>
+                            <td>{{ issue.created_at | date}}</td>
                             <td>
-                                <a href>
-                                    {{ trjm.testRun.testCase.name }}
-                                </a>
+                                <span ng-repeat="label in issue.labels">
+                                    <span class="label label-default"
+                                            style="background-color: #{{ label.color }};">
+                                        {{ label.name }}
+                                    </span>
+                                    <br>
+                                </span>
                             </td>
-                            <td>
-                                <a href>
-                                    {{ trjm.testRun.testCase.module }}
-                                </a>
-                            </td>
-                            <td>{{ trjm.testRun.status | status }}</td>
                         </tr>
                     </tbody>
                     <tfoot>
@@ -75,17 +68,7 @@
                     </tfoot>
                 </table>
 
-                <dl class="dl-horizontal">
-                    <dt>Offset</dt><dd>{{ params.offset }}</dd>
-                    <dt>Total</dt><dd>{{ params.total }}</dd>
-                </dl>
-
-                <button class="btn btn-primary" ng-click="params.offset = params.offset + 1">offset += 1</button>
-<!--                 <button class="btn btn-primary" ng-click="params.limit = params.limit - 1">limit -= 1</button>
-                <button class="btn btn-primary" ng-click="params.limit = params.limit + 1">limit += 1</button> -->
-
             </div>
-
         </div>
     </body>
 </html>

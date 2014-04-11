@@ -7,7 +7,7 @@ angular.module('siTable.directives').directive('siTable', function() {
     return {
         restrict: 'A',
         scope: {
-            sortArray: '='
+            sorting: '='
         },
         controller: function($scope) {
             var self = this;
@@ -20,6 +20,18 @@ angular.module('siTable.directives').directive('siTable', function() {
             this.sortingParams = {
                 sortArray: [],
             };
+
+            // Copy sortArray to scope binding
+            $scope.$watch(function() {
+                return self.sortingParams.sortArray;
+            }, function(sortArray) {
+                $scope.sorting.splice(0, $scope.sorting.length);
+                if (angular.isArray($scope.sorting)) {
+                    for (var i = 0; i < sortArray.length; i++) {
+                        $scope.sorting.push(sortArray[i]);
+                    }
+                }
+            }, true);
         }
     };
 });
