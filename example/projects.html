@@ -17,7 +17,14 @@
                     <h1>SiTable Example</h1>
                 </div>
 
-                <table class="table" si-table>
+                <ul class="dl-horizontal">
+                    <li><strong>Limit: </strong>{{ params.limit }}</li>
+                    <li><strong>Total: </strong>{{ params.total }}</li>
+                    <li><strong>Offset: </strong>{{ params.offset }}</li>
+                    <li><strong>Sorting: </strong>{{ params.sortBy }}</li>
+                </ul>
+
+                <table class="table" si-table sorting="params.sortBy">
                     <thead>
                         <tr>
                             <th sort-by="name">Name</th>
@@ -35,7 +42,7 @@
                     <tfoot>
                         <tr>
                             <td colspan="3">
-                                <si-table-pagination limit="1" total="params.total"></si-table-pagination>
+                                <si-table-pagination limit="1"></si-table-pagination>
                             </td>
                         </tr>
                     </tfoot>

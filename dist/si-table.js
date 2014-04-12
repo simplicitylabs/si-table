@@ -36,6 +36,7 @@ angular.module('siTable.directives').directive('siTable', function() {
             this.paginationParams = {
                 offset: 0,
                 limit: Infinity,
+                remote: false
             };
 
             this.sortingParams = {
@@ -54,23 +55,33 @@ angular.module('siTable.directives').directive('siTable', function() {
                     $scope.sorting.push(sortArray[i]);
                 }
             }, true);
+
+            // DEBUGGING
+            $scope.$watch(function() {
+                return self.paginationParams.remote;
+            }, function(remote) {
+                if (remote === true) {
+                    console.log('Table is now in REMOTE mode.');
+                } else {
+                    console.log('Table is now in LOCAL mode.');
+                }
+            });
         }
     };
 });
 /**
  * Pagination Directive
  *
- * This is injected below siTables and renders a pagination list.
+ * Put this somewhere in side the table to add pagination to the table data.
+ *
+ * The
  */
 angular.module('siTable.directives').directive('siTablePagination', function() {
     return {
         restrict: 'E',
-        priority: 1001,
         require: '^siTable',
         scope: {
-            offset: '=?',
-            total: '=?',
-            limit: '=?'
+            offset: '=?', // read-only
         },
         template: '\
             <ul class="pagination">\
@@ -98,13 +109,6 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
 
             scope.params = controller.paginationParams;
 
-            // Observe `indices` (number of indices shown)
-            attrs.$observe('indices', function(_indices) {
-                if (!isNaN(parseInt(_indices, 10))) {
-                    indices = parseInt(_indices, 10);
-                }
-            });
-
             // Go to specific page
             scope.setPage = function(page) {
                 if (page >= 1 && page <= scope.maxPage) {
@@ -115,6 +119,7 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
             // Create a sliding window of pages around the current page. There
             // should always be `params.maxShowPages` page numbers showing.
             scope.$watch('params', function(params) {
+                console.log(params);
                 var curr = Math.floor(params.offset / params.limit),
                     max = Math.ceil(params.total / params.limit) - 1;
 
@@ -134,31 +139,44 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
                 scope.showPages = showPages;
 
                 scope.offset = params.offset;
-                scope.total = params.total;
-                if (angular.isObject(attrs.limit)) {
-                    scope.limit = params.limit;
-                }
+                // if (angular.isObject(attrs.limit)) {
+                //     scope.limit = params.limit;
+                // }
             }, true);
 
-            scope.$watch('params.total', function() {
-                scope.params.offset = 0;
-            });
+            // scope.$watch('params.total', function() {
+            //     scope.params.offset = 0;
+            // });
 
-            scope.$watch('offset', function(offset) {
-                if (angular.isNumber(offset)) {
-                    scope.params.offset = offset;
+            // Watch the `offset` attribute for external changes
+            // scope.$watch('offset', function(offset) {
+            //     if (angular.isNumber(offset)) {
+            //         scope.params.offset = offset;
+            //     }
+            // });
+
+            // Watch the `total` attribute for external changes. Setting the
+            // total explicitly puts the table in 'remote' mode, meaning it
+            // it should display all the items available, and an external
+            // mechanism should change the items when another page is selected.
+            attrs.$observe('total', function(total) {
+                if (!isNaN(parseInt(total, 10))) {
+                    scope.params.total = parseInt(total, 10);
+                    scope.params.remote = true;
                 }
             });
 
-            scope.$watch('total', function(total) {
-                if (angular.isNumber(total)) {
-                    scope.params.total = total;
+
+            attrs.$observe('limit', function(limit) {
+                if (!isNaN(parseInt(limit, 10))) {
+                    scope.params.limit = parseInt(limit, 10);
                 }
             });
 
-            scope.$watch('limit', function(limit) {
-                if (angular.isNumber(limit)) {
-                    scope.params.limit = limit;
+            // Observe `indices` (number of indices shown)
+            attrs.$observe('indices', function(_indices) {
+                if (!isNaN(parseInt(_indices, 10))) {
+                    indices = parseInt(_indices, 10);
                 }
             });
         }
@@ -272,7 +290,9 @@ angular.module('siTable.filters').filter('siPagination', function() {
         if (!params) {
             return input;
         }
-        params.total = input ? input.length : 0;
+        if (input && !params.remote) {
+            params.total = input.length;
+        }
         return input ?
                 input.slice(params.offset, params.offset + params.limit) : [];
     };

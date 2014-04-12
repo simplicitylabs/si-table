@@ -34,10 +34,10 @@ angular.module('siTableExampleApp').controller('ExampleCtrl', function($scope, $
         limit: 10,
     };
 
-    $scope.$watch('params', function(params) {
-        console.log(params);
-        $scope.$eval('params = params');
-    }, true);
+    // $scope.$watch('params', function(params) {
+    //     console.log(params);
+    //     $scope.$eval('params = params');
+    // }, true);
 
     // var url = 'https://api.github.com/repos/angular/angular.js/issues'
     var url = 'issues.offline.json';
@@ -49,6 +49,7 @@ angular.module('siTableExampleApp').controller('ExampleCtrl', function($scope, $
 angular.module('siTableExampleApp').controller('RemoteCtrl', function($scope, $http) {
     $scope.params = {
         limit: 1,
+        offset: 1
     };
 
     var url = 'http://tunner.silabs.com/api/v1/projects/';

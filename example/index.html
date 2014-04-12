@@ -40,7 +40,7 @@
                     </div>
                 </form>
 
-                <table class="table" si-table sorting="params.sortBy">
+                <table class="table" si-table>
                     <thead>
                         <tr>
                             <th sort-by="number">#</th>
@@ -69,15 +69,13 @@
                     </tbody>
                     <tfoot>
                         <tr>
-                            <td colspan="4">
-                                <si-table-pagination limit="params.limit" offset="params.offset" total="params.total">
+                            <td colspan="5">
+                                <si-table-pagination limit="10">
                                 </si-table-pagination>
                             </td>
                         </tr>
                     </tfoot>
                 </table>
-
-                <button class="btn btn-primary" ng-click="params.offset = params.offset + 1">offset += 1</button>
 
                 <div class="alert alert-info" ng-if="!issues">
                     Loading ...
