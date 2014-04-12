@@ -46,28 +46,59 @@ angular.module('siTableExampleApp').controller('ExampleCtrl', function($scope, $
     });
 });
 
-angular.module('siTableExampleApp').controller('RemoteCtrl', function($scope, $http) {
+// angular.module('siTableExampleApp').controller('RemoteCtrl', function($scope, $http) {
+//     $scope.params = {
+//         limit: 1,
+//         offset: 1
+//     };
+//
+//     var url = 'http://tunner.silabs.com/api/v1/projects/';
+//     function updateData(offset, limit, sortBy) {
+//         $http.get(url, {
+//             params: {
+//                 offset: offset,
+//                 limit: limit,
+//                 orderBy: sortBy
+//             }
+//         }).then(function(data) {
+//             $scope.projects = data.data.objects;
+//             $scope.params.total = data.data.meta.totalCount;
+//         });
+//     }
+//
+//     $scope.$watch('params', function(params) {
+//         console.log('updating data', params);
+//         updateData(params.offset, params.limit, params.sortBy);
+//     }, true);
+// });
+
+angular.module('siTableExampleApp').controller('RemoteCtrl', function($scope, $http) {
+    var limit = 10;
+    var url = 'https://api.github.com/repos/angular/angular.js/issues'
+
     $scope.params = {
-        limit: 1,
-        offset: 1
+        offset: 0,
+        total: 0,
+        sortBy: []
     };
 
-    var url = 'http://tunner.silabs.com/api/v1/projects/';
-    function updateData(offset, limit, sortBy) {
+    function getData(offset) {
+        var page = Math.floor(offset / limit) + 1;
         $http.get(url, {
             params: {
-                offset: offset,
-                limit: limit,
-                orderBy: sortBy
+                'per_page': limit,
+                'page': page
             }
-        }).then(function(data) {
-            $scope.projects = data.data.objects;
-            $scope.params.total = data.data.meta.totalCount;
+        }).then(function(ret) {
+            var maxPage = (/page=(\d+)&per_page=\d+>; rel="last"/).exec(ret.headers('Link'));
+            if (maxPage !== null) {
+                $scope.params.total = parseInt(maxPage[1], 10) * limit;
+            }
+            $scope.issues = ret.data;
         });
     }
 
-    $scope.$watch('params', function(params) {
-        console.log('updating data', params);
-        updateData(params.offset, params.limit, params.sortBy);
-    }, true);
+    $scope.$watch('params.offset', function(offset) {
+        getData(offset);
+    });
 });

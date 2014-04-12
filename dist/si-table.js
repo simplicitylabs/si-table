@@ -149,11 +149,11 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
             // });
 
             // Watch the `offset` attribute for external changes
-            // scope.$watch('offset', function(offset) {
-            //     if (angular.isNumber(offset)) {
-            //         scope.params.offset = offset;
-            //     }
-            // });
+            scope.$watch('offset', function(offset) {
+                if (angular.isNumber(offset)) {
+                    scope.params.offset = offset;
+                }
+            });
 
             // Watch the `total` attribute for external changes. Setting the
             // total explicitly puts the table in 'remote' mode, meaning it
@@ -287,10 +287,10 @@ angular.module('siTable.directives').directive('tr', function() {
  */
 angular.module('siTable.filters').filter('siPagination', function() {
     return function(input, params) {
-        if (!params) {
+        if (!params || params.remote) {
             return input;
         }
-        if (input && !params.remote) {
+        if (input) {
             params.total = input.length;
         }
         return input ?

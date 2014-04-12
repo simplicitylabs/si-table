@@ -10,10 +10,10 @@
  */
 angular.module('siTable.filters').filter('siPagination', function() {
     return function(input, params) {
-        if (!params) {
+        if (!params || params.remote) {
             return input;
         }
-        if (input && !params.remote) {
+        if (input) {
             params.total = input.length;
         }
         return input ?
