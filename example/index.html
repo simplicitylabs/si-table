@@ -23,14 +23,6 @@
                         once</em>. All sorting and filtering is handled on the
                         client side.
                     </div>
-                    <div class="col-sm-6">
-                        <ul class="dl-horizontal">
-                            <li><strong>Limit: </strong>{{ params.limit }}</li>
-                            <li><strong>Total: </strong>{{ params.total }}</li>
-                            <li><strong>Offset: </strong>{{ params.offset }}</li>
-                            <li><strong>Sorting: </strong>{{ params.sortBy }}</li>
-                        </ul>
-                    </div>
                 </div>
 
                 <form class="form">
@@ -70,8 +62,7 @@
                     <tfoot>
                         <tr>
                             <td colspan="5">
-                                <si-table-pagination limit="10">
-                                </si-table-pagination>
+                                <si-table-pagination limit="10" />
                             </td>
                         </tr>
                     </tfoot>

@@ -27,7 +27,14 @@ angular.module('siTable.directives').directive('tr', function() {
 
             return function link(scope, element, attrs, controller) {
                 scope.paginationParams = controller.paginationParams;
-                scope.sortingParams = controller.sortingParams;
+
+                scope.$watch('paginationParams.remote', function(remote) {
+                    if (remote) {
+                        scope.sortingParams = {};
+                    } else {
+                        scope.sortingParams = controller.sortingParams;
+                    }
+                });
             };
         }
     };

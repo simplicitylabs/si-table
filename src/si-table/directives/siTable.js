@@ -34,17 +34,6 @@ angular.module('siTable.directives').directive('siTable', function() {
                     $scope.sorting.push(sortArray[i]);
                 }
             }, true);
-
-            // DEBUGGING
-            $scope.$watch(function() {
-                return self.paginationParams.remote;
-            }, function(remote) {
-                if (remote === true) {
-                    console.log('Table is now in REMOTE mode.');
-                } else {
-                    console.log('Table is now in LOCAL mode.');
-                }
-            });
         }
     };
 });
