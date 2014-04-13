@@ -1,7 +1,8 @@
 /**
  * SiTable (main) Directive
  *
- * Transforms boring tables to a bit cooler ones.
+ * The directive adds a controller to the table element, which can be used in
+ * child directives for communication.
  */
 angular.module('siTable.directives').directive('siTable', function() {
     return {

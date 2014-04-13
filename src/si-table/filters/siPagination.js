@@ -6,7 +6,8 @@
  *
  * NOTE: The filter also *writes* to `params.total`, sniffing out the total
  * numbers of items before pagination, which is useful for generating the
- * pagination directive.
+ * pagination directive. It only does so if the `remote` parameter on the
+ * pagniation parameters is not set.
  */
 angular.module('siTable.filters').filter('siPagination', function() {
     return function(input, params) {

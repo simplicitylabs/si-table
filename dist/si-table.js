@@ -193,11 +193,26 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
     };
 });
 /**
- * Table Header Directive
+ * SortBy Directive
  *
  * Add sorting interface to TH elements which have the `sortBy` attribute on
- * them. The scope adds parameters to an object `sortingParams` on the parent
- * scope, if it exists.
+ * them. The directive accepts the parameter `sortBy`, which should correspond
+ * to the key on the table items on which to sort.
+ *
+ * Suppose the items look like this:
+ *
+ *     {
+ *       name: 'Mikael',
+ *       age: 25
+ *     }
+ *
+ * then use the `sortBy attribute like the following, in order to make the name-
+ * column sortable:
+ *
+ *     <th sortBy="name">Name</th>
+ *
+ * The directive is required to be on a child of an siTable, as it communicates
+ * with the siTable controller.
  */
 angular.module('siTable.directives').directive('sortBy', function() {
     return {
@@ -218,8 +233,13 @@ angular.module('siTable.directives').directive('sortBy', function() {
                         ng-if="state === \'desc\'">&#9650;</span>\
             </th>',
         link: function(scope, element, attrs, controller) {
+
+            // Copy the sorting parameters from the siTable controller. Since
+            // we're copying a reference, the parameters will stay in sync.
             var params = controller.sortingParams;
 
+            // Observe the value of the `sortBy` attribute and update the
+            // internal model
             attrs.$observe('sortBy', function(sortBy) {
                 scope.sortBy = sortBy;
             });
@@ -239,7 +259,8 @@ angular.module('siTable.directives').directive('sortBy', function() {
                     scope.state = 'desc';
                 } else if (params.sortArray.indexOf('-' + sortBy) !== -1) {
                     // descending -> neutral
-                    params.sortArray.splice(params.sortArray.indexOf('-' + sortBy), 1);
+                    params.sortArray.splice(params.sortArray.indexOf('-' +
+                            sortBy), 1);
                     scope.state = '';
                 } else {
                     // neutral -> ascending
@@ -257,8 +278,6 @@ angular.module('siTable.directives').directive('sortBy', function() {
  * This replaces all TR elements, which is necessary to make the API as non-
  * intrusive as possible. It looks for an `ngRepeat` attribute, then adds
  * sorting and pagination.
- *
- * @TODO: This might interfer with trs which should not be tampered with!!
  */
 angular.module('siTable.directives').directive('tr', function() {
     return {
@@ -300,7 +319,8 @@ angular.module('siTable.directives').directive('tr', function() {
  *
  * NOTE: The filter also *writes* to `params.total`, sniffing out the total
  * numbers of items before pagination, which is useful for generating the
- * pagination directive.
+ * pagination directive. It only does so if the `remote` parameter on the
+ * pagniation parameters is not set.
  */
 angular.module('siTable.filters').filter('siPagination', function() {
     return function(input, params) {
