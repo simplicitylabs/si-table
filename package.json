@@ -1,6 +1,6 @@
 {
   "name": "si-table",
-  "version": "0.0.1-beta",
+  "version": "0.0.1-beta.1",
   "description": "Simple table directive for Angular, with pagination and sorting",
   "keywords": [
     "angular",

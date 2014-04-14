@@ -9,7 +9,7 @@ angular.module('siTable.directives').directive('tr', function() {
     return {
         restrict: 'E',
         priority: 1001,
-        require: '^siTable',
+        require: '?^siTable',
         scope: true,
         compile: function(tElement, tAttrs) {
 
@@ -24,6 +24,10 @@ angular.module('siTable.directives').directive('tr', function() {
             tAttrs.ngRepeat += ' | siPagination:paginationParams';
 
             return function link(scope, element, attrs, controller) {
+                if (!controller) {
+                    return;
+                }
+
                 scope.paginationParams = controller.paginationParams;
 
                 scope.$watch('paginationParams.remote', function(remote) {
