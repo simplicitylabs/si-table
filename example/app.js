@@ -21,12 +21,9 @@ angular.module('siTableExampleApp').controller('RemoteCtrl', function($scope, $h
     $scope.params = {};
 
     function getData() {
-        var offset = $scope.params.offset;
+        var offset = $scope.params.offset || 0;
         var sortBy = $scope.params.sortBy;
         var page = Math.floor(offset / limit) + 1;
-        if (!page) {
-            return;
-        }
         $http.get(url, {
             params: {
                 'per_page': limit,
@@ -39,7 +36,6 @@ angular.module('siTableExampleApp').controller('RemoteCtrl', function($scope, $h
             var maxPage = (/page=(\d+)&per_page=\d+>; rel="last"/).exec(ret.headers('Link'));
             if (maxPage !== null) {
                 $scope.params.total = parseInt(maxPage[1], 10) * limit;
-                console.log($scope.params.total);
             }
             $scope.issues = ret.data;
         });

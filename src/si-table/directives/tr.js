@@ -21,10 +21,8 @@ angular.module('siTable.directives').directive('tr', function() {
                         attrs.ngRepeat += ' | orderBy:sortingParams.sortArray';
                         attrs.ngRepeat += ' | siPagination:paginationParams';
                     }
-
                 },
                 post: function(scope, element, attrs, controller) {
-                    console.log(scope, element);
                     if (!controller) {
                         return;
                     }

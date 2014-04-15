@@ -38,7 +38,7 @@
                             <td class="text-muted">#{{ issue.number }}</td>
                             <td><strong><a href="{{ issue.html_url }}">{{ issue.title }}</a></strong></td>
                             <td><a href="{{ issue.user.html_url }}">{{ issue.user.login }}</td>
-                            <td>{{ issue.created_at | date}}</td>
+                            <td>{{ issue.created_at | date }}</td>
                             <td>
                                 <span ng-repeat="label in issue.labels">
                                     <span class="label label-default"
