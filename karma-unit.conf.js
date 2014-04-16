@@ -13,9 +13,9 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'components/angular/angular.js',
-            'components/angular-mocks/angular-mocks.js',
-            'dist/siTable.js',
+            'bower_components/angular/angular.js',
+            'bower_components/angular-mocks/angular-mocks.js',
+            'dist/si-table.js',
             'test/unit/**/*.js'
         ],
 
@@ -71,4 +71,3 @@ module.exports = function(config) {
 
     });
 };
-

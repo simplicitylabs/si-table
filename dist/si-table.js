@@ -1,21 +1,9 @@
 (function(window, document) {
 
-// Create all modules and define dependencies to make sure they exist
-// and are loaded in the correct order to satisfy dependency injection
-// before all nested files are concatenated by Grunt
-
-// Config
-angular.module('siTable.config', [])
-    .value('siTable.config', {
-        debug: true
-    });
-
-// Modules
 angular.module('siTable.directives', []);
 angular.module('siTable.filters', []);
 angular.module('siTable',
     [
-        'siTable.config',
         'siTable.directives',
         'siTable.filters',
     ]);
@@ -280,7 +268,8 @@ angular.module('siTable.directives').directive('sortBy', function() {
  * intrusive as possible. It looks for an `ngRepeat` attribute, then adds
  * sorting and pagination.
  *
- * @TODO: Creates scope for other trs
+ * @TODO: Creates scope for other trs, which is not good. Switch to own
+ * directive name, siTr?
  */
 angular.module('siTable.directives').directive('tr', function() {
     return {
@@ -291,7 +280,7 @@ angular.module('siTable.directives').directive('tr', function() {
         compile: function(tElement, tAttrs) {
             return {
                 pre: function(scope, element, attrs, controller) {
-                    if (controller) {
+                    if (controller && attrs.ngRepeat) {
                         // If we got a contoller, inject sorting and pagination
                         attrs.ngRepeat += ' | orderBy:sortingParams.sortArray';
                         attrs.ngRepeat += ' | siPagination:paginationParams';
@@ -335,7 +324,7 @@ angular.module('siTable.filters').filter('siPagination', function() {
         if (input) {
             params.total = input.length;
         }
-        return input ?
+        return input.length ?
                 input.slice(params.offset, params.offset + params.limit) : [];
     };
 });

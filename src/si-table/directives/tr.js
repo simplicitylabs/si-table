@@ -5,7 +5,8 @@
  * intrusive as possible. It looks for an `ngRepeat` attribute, then adds
  * sorting and pagination.
  *
- * @TODO: Creates scope for other trs
+ * @TODO: Creates scope for other trs, which is not good. Switch to own
+ * directive name, siTr?
  */
 angular.module('siTable.directives').directive('tr', function() {
     return {
@@ -16,7 +17,7 @@ angular.module('siTable.directives').directive('tr', function() {
         compile: function(tElement, tAttrs) {
             return {
                 pre: function(scope, element, attrs, controller) {
-                    if (controller) {
+                    if (controller && attrs.ngRepeat) {
                         // If we got a contoller, inject sorting and pagination
                         attrs.ngRepeat += ' | orderBy:sortingParams.sortArray';
                         attrs.ngRepeat += ' | siPagination:paginationParams';
