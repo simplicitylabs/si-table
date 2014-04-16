@@ -5,29 +5,29 @@
 
 describe('siTable', function() {
 
-    var module;
-    var dependencies;
-    dependencies = [];
+  var module;
+  var dependencies;
+  dependencies = [];
 
-    var hasModule = function(module) {
-        return dependencies.indexOf(module) >= 0;
-    };
+  var hasModule = function(module) {
+    return dependencies.indexOf(module) >= 0;
+  };
 
-    beforeEach(function() {
+  beforeEach(function() {
 
-        // Get module
-        module = angular.module('siTable');
-        dependencies = module.requires;
-    });
+    // Get module
+    module = angular.module('siTable');
+    dependencies = module.requires;
+  });
 
 
-    it('should load directives module', function() {
-        expect(hasModule('siTable.directives')).toBeTruthy();
-    });
+  it('should load directives module', function() {
+    expect(hasModule('siTable.directives')).toBeTruthy();
+  });
 
-    it('sould load filters module', function() {
-        expect(hasModule('siTable.filters')).toBeTruthy();
-    });
+  it('sould load filters module', function() {
+    expect(hasModule('siTable.filters')).toBeTruthy();
+  });
 
 
 });
