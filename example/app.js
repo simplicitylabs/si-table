@@ -16,7 +16,7 @@ angular.module('siTableExampleApp').controller('ExampleCtrl', function($scope, $
 
 angular.module('siTableExampleApp').controller('RemoteCtrl', function($scope, $http) {
   var limit = 10;
-  var url = 'https://api.github.com/repos/angular/angular.js/issues'
+  var url = 'https://api.github.com/repos/angular/angular.js/issues';
 
   $scope.params = {};
 
