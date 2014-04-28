@@ -1,0 +1,65 @@
+<!doctype html>
+<html ng-app="siTableExampleApp">
+<head>
+  <title>si-table example</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+  <script src="si-table.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+  <div class="container">
+
+    <div ng-controller="RemoteCtrl">
+
+      <div class="page-header">
+        <h1>SiTable Example</h1>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          Remote
+        </div>
+      </div>
+
+      <table class="table" si-table sorting="params.sortBy">
+        <thead>
+          <tr>
+            <th sort-by="number">#</th>
+            <th sort-by="title">Title</th>
+            <th sort-by="user.login">User</th>
+            <th sort-by="created_at">Created At</th>
+            <th>Labels</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="issue in issues | filter:filter">
+            <td class="text-muted">#{{ issue.number }}</td>
+            <td><strong><a href="{{ issue.html_url }}">{{ issue.title }}</a></strong></td>
+            <td><a href="{{ issue.user.html_url }}">{{ issue.user.login }}</td>
+              <td>{{ issue.created_at | date }}</td>
+              <td>
+                <span ng-repeat="label in issue.labels">
+                  <span class="label label-default"
+                  style="background-color: #{{ label.color }};">
+                  {{ label.name }}
+                </span>
+                <br>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="5">
+              <si-table-pagination limit="10" total="{{ params.total }}" offset="params.offset" />
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+
+    </div>
+  </div>
+</body>
+</html>
