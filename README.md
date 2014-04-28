@@ -210,6 +210,9 @@ angular.module('myApp').controller(function($scope, $http) {
 });
 ```
 
+Full example implementation (without sorting) in
+[example](http://simplicitylabs.github.io/si-table/remote.html).
+
 **Tip:** Create a model with a method compatible with SiTable to keep your code
 DRY.
 
