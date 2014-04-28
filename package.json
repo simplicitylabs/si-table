@@ -1,6 +1,6 @@
 {
   "name": "si-table",
-  "version": "0.0.1-beta.2",
+  "version": "0.0.1-beta.3",
   "description": "Simple table directive for Angular, with pagination and sorting",
   "repository": {
     "type": "git",
@@ -15,7 +15,9 @@
     "name": "Mikael Berg",
     "email": "miberg@silabs.com"
   },
-  "dependencies": {},
+  "dependencies": {
+    "grunt-contrib-connect": "^0.7.1"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "^0.5.0",
