@@ -27,6 +27,16 @@ SiTable should have a clear, clean, simple and declarative API. It should not
 add functionality which can be best solved by other means. It should simplify
 creating large tables without requiring large code changes.
 
+## Examples
+
+ - [local data](http://simplicitylabs.github.io/si-table/)
+ - [remote pagination](http://simplicitylabs.github.io/si-table/remote.html)
+
+## Installation
+
+ - With Bower: `bower install si-table --save`
+ - Use `si-table.js` or `si-table.min.js` in the `dist` folder.
+
 ## Usage
 
 To get started, just add `si-table` as an attribute to the table you want to
