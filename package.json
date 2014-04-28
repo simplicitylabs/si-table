@@ -2,6 +2,10 @@
   "name": "si-table",
   "version": "0.0.1-beta.2",
   "description": "Simple table directive for Angular, with pagination and sorting",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/simplicitylabs/si-table.git"
+  },
   "keywords": [
     "angular",
     "table"
@@ -14,7 +18,7 @@
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-copy": "^0.5.0",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-coffee": "~0.7.0",
     "grunt-contrib-uglify": "~0.2.0",
@@ -36,7 +40,8 @@
     "grunt-ngmin": "~0.0.2",
     "karma": "^0.12.4",
     "karma-jasmine": "^0.1.5",
-    "karma-chrome-launcher": "^0.1.3"
+    "karma-chrome-launcher": "^0.1.3",
+    "grunt-build-control": "^0.1.3"
   },
   "engines": {
     "node": ">=0.8.0"
