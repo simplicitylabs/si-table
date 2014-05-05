@@ -232,6 +232,16 @@ angular.module('siTable.directives').directive('sortBy', function() {
         scope.sortBy = sortBy;
       });
 
+      // If the sortInit attribute is set, then initialize sorting on this
+      // header
+      if (attrs.sortInit === 'desc') {
+        params.sortArray.push('-' + attrs.sortBy);
+        scope.state = 'desc';
+      } else if (attrs.sortInit) {
+        params.sortArray.push(attrs.sortBy);
+        scope.state = 'asc';
+      }
+
       scope.sort = function() {
         var sortBy = attrs.sortBy;
         if (!sortBy || !params) {
@@ -243,12 +253,12 @@ angular.module('siTable.directives').directive('sortBy', function() {
         if (params.sortArray.indexOf(sortBy) !== -1) {
           // ascending -> descending
           params.sortArray[params.sortArray.indexOf(sortBy)] = '-' +
-          sortBy;
+            sortBy;
           scope.state = 'desc';
         } else if (params.sortArray.indexOf('-' + sortBy) !== -1) {
           // descending -> neutral
           params.sortArray.splice(params.sortArray.indexOf('-' +
-          sortBy), 1);
+            sortBy), 1);
           scope.state = '';
         } else {
           // neutral -> ascending
@@ -323,8 +333,8 @@ angular.module('siTable.filters').filter('siPagination', function() {
     if (input) {
       params.total = input.length;
     }
-    return input.length ?
-    input.slice(params.offset, params.offset + params.limit) : [];
+    return input && input.length ?
+      input.slice(params.offset, params.offset + params.limit) : [];
   };
 });
 })(window, document);

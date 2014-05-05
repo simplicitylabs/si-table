@@ -107,6 +107,15 @@ You can also sort on some nested key using "dot notation":
 <th sort-by="roles.administrator">Is Administrator?</th>
 ```
 
+Set initial sorting with a `sort-init` attribute:
+
+```html
+<th sort-by="username" sort-init="desc">Username</th>
+```
+
+The value of `sort-init` should be either `asc` for ascending order, or `desc`
+for descending order.
+
 ### Filtering
 
 Filtering is not a part of siTable, but can be achieved by adding a filter on
