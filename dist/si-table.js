@@ -5,7 +5,7 @@ angular.module('siTable.filters', []);
 angular.module('siTable',
 [
   'siTable.directives',
-  'siTable.filters',
+  'siTable.filters'
 ]);
 /**
 * SiTable (main) Directive
@@ -29,7 +29,7 @@ angular.module('siTable.directives').directive('siTable', function() {
       };
 
       this.sortingParams = {
-        sortArray: [],
+        sortArray: []
       };
 
       // Copy sortArray to scope binding
@@ -77,10 +77,10 @@ angular.module('siTable.directives').directive('siTable', function() {
 */
 angular.module('siTable.directives').directive('siTablePagination', function() {
   return {
-    restrict: 'E',
+    restrict: 'AE',
     require: '^siTable',
     scope: {
-      offset: '=?', // read-only
+      offset: '=?' // read-only
     },
     template: '\
     <ul class="pagination">\

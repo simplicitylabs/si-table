@@ -28,10 +28,10 @@
 */
 angular.module('siTable.directives').directive('siTablePagination', function() {
   return {
-    restrict: 'E',
+    restrict: 'AE',
     require: '^siTable',
     scope: {
-      offset: '=?', // read-only
+      offset: '=?' // read-only
     },
     template: '\
     <ul class="pagination">\
