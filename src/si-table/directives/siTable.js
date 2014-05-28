@@ -20,7 +20,7 @@ angular.module('siTable.directives').directive('siTable', function() {
       };
 
       this.sortingParams = {
-        sortArray: [],
+        sortArray: []
       };
 
       // Copy sortArray to scope binding
