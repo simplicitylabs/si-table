@@ -302,6 +302,14 @@ angular.module('siTable.directives').directive('tr', function() {
 
           scope.paginationParams = controller.paginationParams;
 
+          if (attrs.ngRepeat) {
+            var matches = attrs.ngRepeat.match(/^\s*([\s\S]+?)\s+in\s+([\s\S]+?)(?:\s+track\s+by\s+([\s\S]+?))?\s*$/),
+              collection = matches[2].split('|')[0].trim();
+            scope.$watchCollection(collection, function() {
+              scope.paginationParams.offset = 0;
+            });
+          }
+
           scope.$watch('paginationParams.remote', function(remote) {
             if (remote) {
               scope.sortingParams = {};
