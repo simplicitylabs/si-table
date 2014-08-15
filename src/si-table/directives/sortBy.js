@@ -34,9 +34,9 @@ angular.module('siTable.directives').directive('sortBy', function() {
     }">\
     <a href ng-transclude></a>\
     <span class="sort-caret sort-asc"\
-    ng-if="state === \'asc\'">&#9660;</span>\
+    ng-if="state === \'desc\'">&#9660;</span>\
     <span class="sort-caret sort-desc"\
-    ng-if="state === \'desc\'">&#9650;</span>\
+    ng-if="state === \'asc\'">&#9650;</span>\
     </th>',
     link: function(scope, element, attrs, controller) {
 
