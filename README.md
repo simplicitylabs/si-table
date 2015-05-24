@@ -91,6 +91,17 @@ paginator should have, using an `indeces` attribute:
 
 The paginator will now show 3 indices (numbered links in the paginator).
 
+To customize paginator buttons use `first-text`, `last-text`, `previous-text`
+and `last-text` parameters:
+
+```html
+<si-table-pagination
+    limit="10"
+    first-text="First page"
+    last-text="Last page"
+    previous-text="«"
+    next-text="»" />
+```
 ### Sorting
 
 Add sorting to a column by specifying the key which the data should be sorted
