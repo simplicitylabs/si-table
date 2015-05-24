@@ -89,10 +89,10 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
     template: '\
     <ul class="pagination">\
     <li ng-class="{disabled: params.offset === 0}">\
-    <a href ng-click="setPage(1)">First</a>\
+    <a href ng-click="setPage(1)">{{ params.firstText }}</a>\
     </li>\
     <li ng-class="{disabled: params.offset === 0}">\
-    <a href ng-click="setPage(currPage - 1)">Previous</a>\
+    <a href ng-click="setPage(currPage - 1)">{{ params.previousText }}</a>\
     </li>\
     <li ng-repeat="page in showPages"\
     ng-class="{active: currPage === page}">\
@@ -100,11 +100,11 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
     </li>\
     <li ng-class="{disabled:\
       params.offset + params.limit >= params.total}">\
-      <a href ng-click="setPage(currPage + 1)">Next</a>\
+      <a href ng-click="setPage(currPage + 1)">{{ params.nextText }}</a>\
       </li>\
       <li ng-class="{disabled:\
         params.offset + params.limit >= params.total}">\
-        <a href ng-click="setPage(maxPage)">Last</a>\
+        <a href ng-click="setPage(maxPage)">{{ params.lastText }}</a>\
         </li>\
         </ul>',
     link: function(scope, element, attrs, controller) {
