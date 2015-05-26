@@ -48,7 +48,7 @@ convert:
         <th>Username</th>
         <th>Real Name</th>
     </tr>
-    <tr ng-repeat="user in users">
+    <tr si-sortable ng-repeat="user in users">
         <td>{{ user.username }}</td>
         <td>{{ user.realName }}</td>
     </tr>
@@ -133,7 +133,7 @@ Filtering is not a part of siTable, but can be achieved by adding a filter on
 the `tr`'s `ng-repeat` directive:
 
 ```html
-<tr ng-repeat="user in users | myArbitraryFilter">
+<tr si-sortable ng-repeat="user in users | myArbitraryFilter">
 ```
 
 For example, Angular's built-in `filter` can be used to filter on all features
@@ -146,7 +146,7 @@ of the object. Suppose somewhere in the template, an `input` box is added:
 The filter can then be used:
 
 ```html
-<tr ng-repeat="user in users | filter:userFilter">
+<tr si-sortable ng-repeat="user in users | filter:userFilter">
 ```
 
 ### Formatting
@@ -156,7 +156,7 @@ example:
 
 ```html
 <!-- conditionally set a class for the `tr` -->
-<tr ng-repeat="user in users" ng-class="{admin: user.roles.administrator}">
+<tr si-sortable ng-repeat="user in users" ng-class="{admin: user.roles.administrator}">
     <!-- data formatting using filter -->
     <td>{{ user.username | lowercase }}</td>
     <!-- using a custom directive -->
