@@ -25,11 +25,7 @@ angular.module('siTable.directives').directive('siTable', function() {
       this.paginationParams = {
         offset: 0,
         limit: Infinity,
-        remote: false,
-        firstText: 'First',
-        lastText: 'Last',
-        previousText: 'Previuos',
-        nextText: 'Next'
+        remote: false
       };
 
       this.sortingParams = {
@@ -87,12 +83,12 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
       offset: '=?' // read-only
     },
     template: '\
-    <ul class="pagination" ng-show="params.total > params.limit">\
+    <ul class="pagination">\
     <li ng-class="{disabled: params.offset === 0}">\
-    <a href ng-click="setPage(1)">{{ params.firstText }}</a>\
+    <a href ng-click="setPage(1)">First</a>\
     </li>\
     <li ng-class="{disabled: params.offset === 0}">\
-    <a href ng-click="setPage(currPage - 1)">{{ params.previousText }}</a>\
+    <a href ng-click="setPage(currPage - 1)">Previous</a>\
     </li>\
     <li ng-repeat="page in showPages"\
     ng-class="{active: currPage === page}">\
@@ -100,11 +96,11 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
     </li>\
     <li ng-class="{disabled:\
       params.offset + params.limit >= params.total}">\
-      <a href ng-click="setPage(currPage + 1)">{{ params.nextText }}</a>\
+      <a href ng-click="setPage(currPage + 1)">Next</a>\
       </li>\
       <li ng-class="{disabled:\
         params.offset + params.limit >= params.total}">\
-        <a href ng-click="setPage(maxPage)">{{ params.lastText }}</a>\
+        <a href ng-click="setPage(maxPage)">Last</a>\
         </li>\
         </ul>',
     link: function(scope, element, attrs, controller) {
@@ -179,38 +175,6 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
       attrs.$observe('indices', function(_indices) {
         if (!isNaN(parseInt(_indices, 10))) {
           indices = parseInt(_indices, 10);
-        }
-      });
-
-      // Watch the `firstText` attribute for external changes. The
-      // parameter is used as text for First page button
-      attrs.$observe('firstText', function(firstText) {
-        if (firstText) {
-          scope.params.firstText = firstText;
-        }
-      });
-
-      // Watch the `lastText` attribute for external changes. The
-      // parameter is used as text for Last page button
-      attrs.$observe('lastText', function(lastText) {
-        if (lastText) {
-          scope.params.lastText = lastText;
-        }
-      });
-
-      // Watch the `previousText` attribute for external changes. The
-      // parameter is used as text for Previuos page button
-      attrs.$observe('previousText', function(previousText) {
-        if (previousText) {
-          scope.params.previousText = previousText;
-        }
-      });
-
-      // Watch the `nextText` attribute for external changes. The
-      // parameter is used as text for Next page button
-      attrs.$observe('nextText', function(nextText) {
-        if (nextText) {
-          scope.params.nextText = nextText;
         }
       });
     }
@@ -307,46 +271,54 @@ angular.module('siTable.directives').directive('sortBy', function() {
   };
 });
 /**
-* siSortable Directive
+* Table Row Directive
 *
 * This replaces all TR elements, which is necessary to make the API as non-
 * intrusive as possible. It looks for an `ngRepeat` attribute, then adds
 * sorting and pagination.
+*
+* @TODO: Creates scope for other trs, which is not good. Switch to own
+* directive name, siTr?
 */
-angular.module('siTable.directives').directive('siSortable', function() {
+angular.module('siTable.directives').directive('tr', function() {
   return {
-    restrict: 'A',
+    restrict: 'E',
     priority: 1001,
     require: '?^siTable',
     scope: true,
     compile: function(tElement, tAttrs) {
-      debugger;
-      tAttrs.ngRepeat += " | orderBy:sortingParams.sortArray";
-      tAttrs.ngRepeat += ' | siPagination:paginationParams';
+      return {
+        pre: function(scope, element, attrs, controller) {
+          if (controller && attrs.ngRepeat) {
+            // If we got a contoller, inject sorting and pagination
+            attrs.ngRepeat += ' | orderBy:sortingParams.sortArray';
+            attrs.ngRepeat += ' | siPagination:paginationParams';
+          }
+        },
+        post: function(scope, element, attrs, controller) {
+          if (!controller) {
+            return;
+          }
 
-      return function link(scope, element, attrs, controller) {
-        if (!controller) {
-          return;
-        }
+          scope.paginationParams = controller.paginationParams;
 
-        scope.paginationParams = controller.paginationParams;
+          if (attrs.ngRepeat) {
+            var matches = attrs.ngRepeat.match(/^\s*([\s\S]+?)\s+in\s+([\s\S]+?)(?:\s+track\s+by\s+([\s\S]+?))?\s*$/),
+              collection = matches[2].split('|')[0].trim();
+            scope.$watchCollection(collection, function() {
+              scope.paginationParams.offset = 0;
+            });
+          }
 
-        if (attrs.ngRepeat) {
-          var matches = attrs.ngRepeat.match(/^\s*([\s\S]+?)\s+in\s+([\s\S]+?)(?:\s+track\s+by\s+([\s\S]+?))?\s*$/),
-            collection = matches[2].split('|')[0].trim();
-          scope.$watchCollection(collection, function() {
-            scope.paginationParams.offset = 0;
+          scope.$watch('paginationParams.remote', function(remote) {
+            if (remote) {
+              scope.sortingParams = {};
+            } else {
+              scope.sortingParams = controller.sortingParams;
+            }
           });
         }
-
-        scope.$watch('paginationParams.remote', function(remote) {
-          if (remote) {
-            scope.sortingParams = {};
-          } else {
-            scope.sortingParams = controller.sortingParams;
-          }
-        });
-      }
+      };
     }
   };
 });
