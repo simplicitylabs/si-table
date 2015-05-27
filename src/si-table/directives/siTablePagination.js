@@ -120,8 +120,8 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
         }
       });
 
-      // Watch the `indeces` attribute for external changes. The parameter
-      // is used to decide how many indeces is shown in the paginator at
+      // Watch the `indices` attribute for external changes. The parameter
+      // is used to decide how many indices is shown in the paginator at
       // maximum.
       attrs.$observe('indices', function(_indices) {
         if (!isNaN(parseInt(_indices, 10))) {
