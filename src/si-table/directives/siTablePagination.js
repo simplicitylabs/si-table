@@ -34,7 +34,7 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
       offset: '=?' // read-only
     },
     template: '\
-    <ul class="pagination">\
+    <ul class="pagination" ng-show="params.total > params.limit">\
     <li ng-class="{disabled: params.offset === 0}">\
     <a href ng-click="setPage(1)">{{ params.firstText }}</a>\
     </li>\
