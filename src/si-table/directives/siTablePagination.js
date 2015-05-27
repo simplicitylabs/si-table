@@ -36,10 +36,10 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
     template: '\
     <ul class="pagination">\
     <li ng-class="{disabled: params.offset === 0}">\
-    <a href ng-click="setPage(1)">First</a>\
+    <a href ng-click="setPage(1)">{{ params.firstText }}</a>\
     </li>\
     <li ng-class="{disabled: params.offset === 0}">\
-    <a href ng-click="setPage(currPage - 1)">Previous</a>\
+    <a href ng-click="setPage(currPage - 1)">{{ params.previousText }}</a>\
     </li>\
     <li ng-repeat="page in showPages"\
     ng-class="{active: currPage === page}">\
@@ -47,11 +47,11 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
     </li>\
     <li ng-class="{disabled:\
       params.offset + params.limit >= params.total}">\
-      <a href ng-click="setPage(currPage + 1)">Next</a>\
+      <a href ng-click="setPage(currPage + 1)">{{ params.nextText }}</a>\
       </li>\
       <li ng-class="{disabled:\
         params.offset + params.limit >= params.total}">\
-        <a href ng-click="setPage(maxPage)">Last</a>\
+        <a href ng-click="setPage(maxPage)">{{ params.lastText }}</a>\
         </li>\
         </ul>',
     link: function(scope, element, attrs, controller) {
@@ -120,12 +120,44 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
         }
       });
 
-      // Watch the `indeces` attribute for external changes. The parameter
-      // is used to decide how many indeces is shown in the paginator at
+      // Watch the `indices` attribute for external changes. The parameter
+      // is used to decide how many indices is shown in the paginator at
       // maximum.
       attrs.$observe('indices', function(_indices) {
         if (!isNaN(parseInt(_indices, 10))) {
           indices = parseInt(_indices, 10);
+        }
+      });
+
+      // Watch the `firstText` attribute for external changes. The
+      // parameter is used as text for First page button
+      attrs.$observe('firstText', function(firstText) {
+        if (firstText) {
+          scope.params.firstText = firstText;
+        }
+      });
+
+      // Watch the `lastText` attribute for external changes. The
+      // parameter is used as text for Last page button
+      attrs.$observe('lastText', function(lastText) {
+        if (lastText) {
+          scope.params.lastText = lastText;
+        }
+      });
+
+      // Watch the `previousText` attribute for external changes. The
+      // parameter is used as text for Previuos page button
+      attrs.$observe('previousText', function(previousText) {
+        if (previousText) {
+          scope.params.previousText = previousText;
+        }
+      });
+
+      // Watch the `nextText` attribute for external changes. The
+      // parameter is used as text for Next page button
+      attrs.$observe('nextText', function(nextText) {
+        if (nextText) {
+          scope.params.nextText = nextText;
         }
       });
     }

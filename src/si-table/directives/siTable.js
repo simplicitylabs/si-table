@@ -16,7 +16,11 @@ angular.module('siTable.directives').directive('siTable', function() {
       this.paginationParams = {
         offset: 0,
         limit: Infinity,
-        remote: false
+        remote: false,
+        firstText: 'First',
+        lastText: 'Last',
+        previousText: 'Previuos',
+        nextText: 'Next'
       };
 
       this.sortingParams = {
