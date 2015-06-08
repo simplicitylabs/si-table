@@ -12,7 +12,7 @@ angular.module('siTable.directives').directive('siSortable', function() {
     require: '?^siTable',
     scope: true,
     compile: function(tElement, tAttrs) {
-      tAttrs.ngRepeat += " | orderBy:sortingParams.sortArray";
+      tAttrs.ngRepeat += ' | orderBy:sortingParams.sortArray';
       tAttrs.ngRepeat += ' | siPagination:paginationParams';
 
       return function link(scope, element, attrs, controller) {
@@ -32,9 +32,12 @@ angular.module('siTable.directives').directive('siSortable', function() {
 
         scope.$watch('paginationParams.remote', function(remote) {
           if (remote) {
-            scope.sortingParams = {};
+            scope.sortingParams = {single: false};
           } else {
             scope.sortingParams = controller.sortingParams;
+          }
+          if (attrs.siSortable === 'single') {
+            scope.sortingParams.single = true;
           }
         });
       };
