@@ -18,6 +18,7 @@ angular.module('siTable.directives').directive('siSortable', function() {
         asClause = tAttrs.ngRepeat.substr(asPos);
         tAttrs.ngRepeat = tAttrs.ngRepeat.slice(0, asPos);
       }
+
       tAttrs.ngRepeat += ' | orderBy:sortingParams.sortArray';
       tAttrs.ngRepeat += ' | siPagination:paginationParams';
       if(asClause) {
@@ -41,9 +42,12 @@ angular.module('siTable.directives').directive('siSortable', function() {
 
         scope.$watch('paginationParams.remote', function(remote) {
           if (remote) {
-            scope.sortingParams = {};
+            scope.sortingParams = {single: false};
           } else {
             scope.sortingParams = controller.sortingParams;
+          }
+          if (attrs.siSortable === 'single') {
+            scope.sortingParams.single = true;
           }
         });
       };

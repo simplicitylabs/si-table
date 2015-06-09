@@ -118,6 +118,14 @@ You can also sort on some nested key using "dot notation":
 <th sort-by="roles.administrator">Is Administrator?</th>
 ```
 
+By default, `si-table` orders data by multiple columns. If you want to change
+this behavior to single-column sorting, just add `="single"` to `si-sortable`
+directive:
+
+```html
+<tr si-sortable="single" ng-repeat="order in orders">
+```
+
 Set initial sorting with a `sort-init` attribute:
 
 ```html
