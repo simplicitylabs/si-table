@@ -20,7 +20,7 @@
 * The directive is required to be on a child of an siTable, as it communicates
 * with the siTable controller.
 */
-angular.module('siTable.directives').directive('sortBy', function() {
+angular.module('siTable.directives').directive('sortBy', function($rootScope) {
   return {
     restrict: 'A',
     transclude: true,
@@ -66,24 +66,45 @@ angular.module('siTable.directives').directive('sortBy', function() {
           return;
         }
 
+        if (params.single) {
+          $rootScope.$broadcast('resetSorting');
+        }
+
         // Tri-state: ascending -> descending -> neutral, represented by
         // an array as per Angular's orderBy specification.
+
+        // ascending -> descending
         if (params.sortArray.indexOf(sortBy) !== -1) {
-          // ascending -> descending
-          params.sortArray[params.sortArray.indexOf(sortBy)] = '-' +
-            sortBy;
+          if (params.single) {
+            params.sortArray = ['-' + sortBy];
+          } else {
+            params.sortArray[params.sortArray.indexOf(sortBy)] = '-' + sortBy;
+          }
           scope.state = 'desc';
+
+        // descending -> neutral
         } else if (params.sortArray.indexOf('-' + sortBy) !== -1) {
-          // descending -> neutral
-          params.sortArray.splice(params.sortArray.indexOf('-' +
-            sortBy), 1);
+          if (params.single) {
+            params.sortArray = [];
+          } else {
+            params.sortArray.splice(params.sortArray.indexOf('-' + sortBy), 1);
+          }
           scope.state = '';
+
+        // neutral -> ascending
         } else {
-          // neutral -> ascending
-          params.sortArray.push(sortBy);
+          if (params.single) {
+            params.sortArray = [sortBy];
+          } else {
+            params.sortArray.push(sortBy);
+          }
           scope.state = 'asc';
         }
       };
+
+      scope.$on('resetSorting', function(event) {
+        scope.state = '';
+      });
 
     }
   };
