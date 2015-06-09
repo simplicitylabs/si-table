@@ -12,8 +12,17 @@ angular.module('siTable.directives').directive('siSortable', function() {
     require: '?^siTable',
     scope: true,
     compile: function(tElement, tAttrs) {
-      tAttrs.ngRepeat += " | orderBy:sortingParams.sortArray";
+      var asClause;
+      var asPos = tAttrs.ngRepeat.indexOf(' as ');
+      if(asPos >= 0) {
+        asClause = tAttrs.ngRepeat.substr(asPos);
+        tAttrs.ngRepeat = tAttrs.ngRepeat.slice(0, asPos);
+      }
+      tAttrs.ngRepeat += ' | orderBy:sortingParams.sortArray';
       tAttrs.ngRepeat += ' | siPagination:paginationParams';
+      if(asClause) {
+        tAttrs.ngRepeat += asClause;
+      }
 
       return function link(scope, element, attrs, controller) {
         if (!controller) {
