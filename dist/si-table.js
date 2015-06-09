@@ -21,8 +21,18 @@ angular.module('siTable.directives').directive('siSortable', function() {
     require: '?^siTable',
     scope: true,
     compile: function(tElement, tAttrs) {
-      tAttrs.ngRepeat += " | orderBy:sortingParams.sortArray";
+      var asClause;
+      var asPos = tAttrs.ngRepeat.indexOf(' as ');
+      if(asPos >= 0) {
+        asClause = tAttrs.ngRepeat.substr(asPos);
+        tAttrs.ngRepeat = tAttrs.ngRepeat.slice(0, asPos);
+      }
+
+      tAttrs.ngRepeat += ' | orderBy:sortingParams.sortArray';
       tAttrs.ngRepeat += ' | siPagination:paginationParams';
+      if(asClause) {
+        tAttrs.ngRepeat += asClause;
+      }
 
       return function link(scope, element, attrs, controller) {
         if (!controller) {
@@ -41,9 +51,12 @@ angular.module('siTable.directives').directive('siSortable', function() {
 
         scope.$watch('paginationParams.remote', function(remote) {
           if (remote) {
-            scope.sortingParams = {};
+            scope.sortingParams = {single: false};
           } else {
             scope.sortingParams = controller.sortingParams;
+          }
+          if (attrs.siSortable === 'single') {
+            scope.sortingParams.single = true;
           }
         });
       };
@@ -76,7 +89,8 @@ angular.module('siTable.directives').directive('siTable', function() {
       };
 
       this.sortingParams = {
-        sortArray: []
+        sortArray: [],
+        single: false
       };
 
       // Copy sortArray to scope binding
@@ -281,7 +295,7 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
 * The directive is required to be on a child of an siTable, as it communicates
 * with the siTable controller.
 */
-angular.module('siTable.directives').directive('sortBy', function() {
+angular.module('siTable.directives').directive('sortBy', function($rootScope) {
   return {
     restrict: 'A',
     transclude: true,
@@ -327,24 +341,45 @@ angular.module('siTable.directives').directive('sortBy', function() {
           return;
         }
 
+        if (params.single) {
+          $rootScope.$broadcast('resetSorting');
+        }
+
         // Tri-state: ascending -> descending -> neutral, represented by
         // an array as per Angular's orderBy specification.
+
+        // ascending -> descending
         if (params.sortArray.indexOf(sortBy) !== -1) {
-          // ascending -> descending
-          params.sortArray[params.sortArray.indexOf(sortBy)] = '-' +
-            sortBy;
+          if (params.single) {
+            params.sortArray = ['-' + sortBy];
+          } else {
+            params.sortArray[params.sortArray.indexOf(sortBy)] = '-' + sortBy;
+          }
           scope.state = 'desc';
+
+        // descending -> neutral
         } else if (params.sortArray.indexOf('-' + sortBy) !== -1) {
-          // descending -> neutral
-          params.sortArray.splice(params.sortArray.indexOf('-' +
-            sortBy), 1);
+          if (params.single) {
+            params.sortArray = [];
+          } else {
+            params.sortArray.splice(params.sortArray.indexOf('-' + sortBy), 1);
+          }
           scope.state = '';
+
+        // neutral -> ascending
         } else {
-          // neutral -> ascending
-          params.sortArray.push(sortBy);
+          if (params.single) {
+            params.sortArray = [sortBy];
+          } else {
+            params.sortArray.push(sortBy);
+          }
           scope.state = 'asc';
         }
       };
+
+      scope.$on('resetSorting', function(event) {
+        scope.state = '';
+      });
 
     }
   };
