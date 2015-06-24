@@ -25,6 +25,9 @@ angular.module('siTable.directives').directive('siSortable', function() {
         tAttrs.ngRepeat += asClause;
       }
 
+      tAttrs.ngRepeat = tAttrs.ngRepeat.replace(' in ', ' in $parent.currentList = (');
+      tAttrs.ngRepeat += ')';
+
       return function link(scope, element, attrs, controller) {
         if (!controller) {
           return;
