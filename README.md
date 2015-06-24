@@ -102,6 +102,28 @@ and `last-text` parameters:
     previous-text="«"
     next-text="»" />
 ```
+### 'Select all' checkbox
+
+'Select all' checkbox toggles `selected` property of each array element
+on current page.
+
+It automatically becomes checked when all array elements on current page have 
+`selected: true` and unchecked when at least one of array elements on current
+page have `selected: false`.
+
+```html
+<table si-table>
+    <tr>
+        <th>Email address</th>
+        <th><input type="checkbox" si-select-all></th>
+    </tr>
+    <tr si-sortable ng-repeat="email in emails">
+        <td>{{ email.email }}</td>
+        <td><input type="checkbox" ng-model="email.selected"></td>
+    </tr>
+</table>
+```
+
 ### Sorting
 
 Add sorting to a column by specifying the key which the data should be sorted
