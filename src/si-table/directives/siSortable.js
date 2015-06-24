@@ -14,14 +14,14 @@ angular.module('siTable.directives').directive('siSortable', function() {
     compile: function(tElement, tAttrs) {
       var asClause;
       var asPos = tAttrs.ngRepeat.indexOf(' as ');
-      if(asPos >= 0) {
+      if (asPos >= 0) {
         asClause = tAttrs.ngRepeat.substr(asPos);
         tAttrs.ngRepeat = tAttrs.ngRepeat.slice(0, asPos);
       }
 
       tAttrs.ngRepeat += ' | orderBy:sortingParams.sortArray';
       tAttrs.ngRepeat += ' | siPagination:paginationParams';
-      if(asClause) {
+      if (asClause) {
         tAttrs.ngRepeat += asClause;
       }
 
@@ -33,8 +33,10 @@ angular.module('siTable.directives').directive('siSortable', function() {
         scope.paginationParams = controller.paginationParams;
 
         if (attrs.ngRepeat) {
-          var matches = attrs.ngRepeat.match(/^\s*([\s\S]+?)\s+in\s+([\s\S]+?)(?:\s+track\s+by\s+([\s\S]+?))?\s*$/),
-            collection = matches[2].split('|')[0].trim();
+          var matches = attrs.ngRepeat.match(
+            /^\s*([\s\S]+?)\s+in\s+([\s\S]+?)(?:\s+track\s+by\s+([\s\S]+?))?\s*$/
+          );
+          var collection = matches[2].split('|')[0].trim();
           scope.$watchCollection(collection, function() {
             scope.paginationParams.offset = 0;
           });
