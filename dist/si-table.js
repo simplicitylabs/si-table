@@ -8,6 +8,49 @@ angular.module('siTable',
   'siTable.filters'
 ]);
 /**
+* Select All Directive
+*
+* Checkbox which toggles 'selected' property of each array element
+* on current page.
+*
+* Checkbox in table header automatically becomes checked when all
+* array elements on current page have selected: true.
+*
+* Checkbox in table header automatically becomes unchecked when
+* at least one of array elements on current page have selected: false.
+*/
+angular.module('siTable.directives').directive('siSelectAll', function() {
+  return {
+    restrict: 'A',
+    scope: true,
+    require: '^siTable',
+    controller: function($scope, $element) {
+      $scope.$element = $element[0];
+
+      $element.on('change', function(e) {
+        for (var i = 0; i < $scope.currentList.length; i++) {
+          $scope.currentList[i].selected = e.target.checked;
+        }
+        $scope.$apply();
+      });
+
+      $scope.$watch('currentList', function() {
+        if ($scope.currentList && $scope.currentList.length) {
+          for (var i = 0; i < $scope.currentList.length; i++) {
+            if (!$scope.currentList[i].selected) {
+              $scope.$element.checked = false;
+              return;
+            }
+          }
+          $scope.$element.checked = true;
+        } else {
+          $scope.$element.checked = false;
+        }
+      }, true);
+    }
+  };
+});
+/**
 * siSortable Directive
 *
 * This replaces all TR elements, which is necessary to make the API as non-
@@ -23,16 +66,19 @@ angular.module('siTable.directives').directive('siSortable', function() {
     compile: function(tElement, tAttrs) {
       var asClause;
       var asPos = tAttrs.ngRepeat.indexOf(' as ');
-      if(asPos >= 0) {
+      if (asPos >= 0) {
         asClause = tAttrs.ngRepeat.substr(asPos);
         tAttrs.ngRepeat = tAttrs.ngRepeat.slice(0, asPos);
       }
 
       tAttrs.ngRepeat += ' | orderBy:sortingParams.sortArray';
       tAttrs.ngRepeat += ' | siPagination:paginationParams';
-      if(asClause) {
+      if (asClause) {
         tAttrs.ngRepeat += asClause;
       }
+
+      tAttrs.ngRepeat = tAttrs.ngRepeat.replace(' in ', ' in $parent.currentList = (');
+      tAttrs.ngRepeat += ')';
 
       return function link(scope, element, attrs, controller) {
         if (!controller) {
@@ -42,8 +88,10 @@ angular.module('siTable.directives').directive('siSortable', function() {
         scope.paginationParams = controller.paginationParams;
 
         if (attrs.ngRepeat) {
-          var matches = attrs.ngRepeat.match(/^\s*([\s\S]+?)\s+in\s+([\s\S]+?)(?:\s+track\s+by\s+([\s\S]+?))?\s*$/),
-            collection = matches[2].split('|')[0].trim();
+          var matches = attrs.ngRepeat.match(
+            /^\s*([\s\S]+?)\s+in\s+([\s\S]+?)(?:\s+track\s+by\s+([\s\S]+?))?\s*$/
+          );
+          var collection = matches[2].split('|')[0].trim();
           scope.$watchCollection(collection, function() {
             scope.paginationParams.offset = 0;
           });
