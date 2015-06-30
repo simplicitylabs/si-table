@@ -1,3 +1,7 @@
+# 0.2.1 (2015-06-30)
+
+- Fix a problem which caused `ngRepeat` parsing errors (#22, #23) 
+
 # 0.2.0 (2015-06-25)
 
 - Add `siSelectAll` directive, which toggles `selected` property of each array
