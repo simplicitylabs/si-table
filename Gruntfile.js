@@ -3,6 +3,20 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     library: grunt.file.readJSON('bower.json'),
+    ngAnnotate: {
+      options: {
+        singleQuotes: true,
+      },
+      dist: {
+        files: [
+          {
+            expand: true,
+            src: ['src/<%= library.name %>/directives/**/*.js'],
+            dest: 'annotated'
+          },
+        ],
+      }
+    },
     concat: {
       options: {
         separator: ''
@@ -11,7 +25,7 @@ module.exports = function (grunt) {
         src: [
           'src/<%= library.name %>/<%= library.name %>.prefix',
           'src/<%= library.name %>/<%= library.name %>.js',
-          'src/<%= library.name %>/directives/**/*.js',
+          'annotated/src/<%= library.name %>/directives/**/*.js',
           'src/<%= library.name %>/filters/**/*.js',
           'src/<%= library.name %>/services/**/*.js',
           'src/<%= library.name %>/<%= library.name %>.suffix'
@@ -101,8 +115,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-build-control');
+  grunt.loadNpmTasks('grunt-ng-annotate');
 
-  grunt.registerTask('default', ['jshint:beforeConcat', 'concat', 'jshint:afterConcat', 'uglify']);
+  grunt.registerTask('default', ['jshint:beforeConcat', 'ngAnnotate', 'concat', 'jshint:afterConcat', 'uglify']);
   grunt.registerTask('livereload', ['default', 'watch']);
   grunt.registerTask('example', ['default', 'connect:example', 'watch']);
   grunt.registerTask('ghpages', ['default', 'copy:ghpages']);
