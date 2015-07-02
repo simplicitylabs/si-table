@@ -9,12 +9,12 @@ module.exports = function (grunt) {
       },
       library: {
         src: [
-        'src/<%= library.name %>/<%= library.name %>.prefix',
-        'src/<%= library.name %>/<%= library.name %>.js',
-        'src/<%= library.name %>/directives/**/*.js',
-        'src/<%= library.name %>/filters/**/*.js',
-        'src/<%= library.name %>/services/**/*.js',
-        'src/<%= library.name %>/<%= library.name %>.suffix'
+          'src/<%= library.name %>/<%= library.name %>.prefix',
+          'src/<%= library.name %>/<%= library.name %>.js',
+          'src/<%= library.name %>/directives/**/*.js',
+          'src/<%= library.name %>/filters/**/*.js',
+          'src/<%= library.name %>/services/**/*.js',
+          'src/<%= library.name %>/<%= library.name %>.suffix'
         ],
         dest: 'dist/<%= library.name %>.js'
       }
@@ -35,7 +35,7 @@ module.exports = function (grunt) {
       },
       afterConcat: {
         src: [
-        '<%= concat.library.dest %>'
+          '<%= concat.library.dest %>'
         ]
       },
       options: {
@@ -56,9 +56,9 @@ module.exports = function (grunt) {
         livereload: true
       },
       files: [
-      'Gruntfile.js',
-      'src/**/*',
-      'example/*'
+        'Gruntfile.js',
+        'src/**/*',
+        'example/*'
       ],
       tasks: ['default']
     },
