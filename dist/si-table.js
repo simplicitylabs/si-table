@@ -24,7 +24,7 @@ angular.module('siTable.directives').directive('siSelectAll', function() {
     restrict: 'A',
     scope: true,
     require: '^siTable',
-    controller: function($scope, $element) {
+    controller: ['$scope', '$element', function($scope, $element) {
       $scope.$element = $element[0];
 
       $element.on('change', function(e) {
@@ -47,7 +47,7 @@ angular.module('siTable.directives').directive('siSelectAll', function() {
           $scope.$element.checked = false;
         }
       }, true);
-    }
+    }]
   };
 });
 /**
@@ -122,7 +122,7 @@ angular.module('siTable.directives').directive('siTable', function() {
     scope: {
       sorting: '=?'
     },
-    controller: function($scope) {
+    controller: ['$scope', function($scope) {
       var self = this;
 
       this.paginationParams = {
@@ -152,7 +152,7 @@ angular.module('siTable.directives').directive('siTable', function() {
           $scope.sorting.push(sortArray[i]);
         }
       }, true);
-    }
+    }]
   };
 });
 /**
@@ -342,7 +342,7 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
 * The directive is required to be on a child of an siTable, as it communicates
 * with the siTable controller.
 */
-angular.module('siTable.directives').directive('sortBy', function($rootScope) {
+angular.module('siTable.directives').directive('sortBy', ['$rootScope', function($rootScope) {
   return {
     restrict: 'A',
     transclude: true,
@@ -430,7 +430,7 @@ angular.module('siTable.directives').directive('sortBy', function($rootScope) {
 
     }
   };
-});
+}]);
 /**
 * Pagination filter
 *

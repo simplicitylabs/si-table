@@ -1,6 +1,10 @@
+# 0.2.2 (2015-07-06)
+
+- Add `ngAnnotate` task to add AngularJS dependency injection annotations.
+
 # 0.2.1 (2015-06-30)
 
-- Fix a problem which caused `ngRepeat` parsing errors (#22, #23) 
+- Fix a problem which caused `ngRepeat` parsing errors (#22, #23)
 
 # 0.2.0 (2015-06-25)
 
