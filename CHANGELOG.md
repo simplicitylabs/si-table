@@ -1,3 +1,12 @@
+<a name="0.2.3"></a>
+### 0.2.3 (2015-07-30)
+
+
+#### Bug Fixes
+
+* **siTable:** Change default `previousText` to `Previous` (was `Previuos`) ((5224fdbe))
+
+
 # 0.2.2 (2015-07-06)
 
 - Add `ngAnnotate` task to add AngularJS dependency injection annotations.
