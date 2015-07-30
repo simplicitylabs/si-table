@@ -19,7 +19,7 @@ angular.module('siTable.directives').directive('siTable', function() {
         remote: false,
         firstText: 'First',
         lastText: 'Last',
-        previousText: 'Previuos',
+        previousText: 'Previous',
         nextText: 'Next'
       };
 

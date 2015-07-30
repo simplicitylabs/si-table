@@ -146,7 +146,7 @@ angular.module('siTable.directives').directive('siTablePagination', function() {
       });
 
       // Watch the `previousText` attribute for external changes. The
-      // parameter is used as text for Previuos page button
+      // parameter is used as text for Previous page button
       attrs.$observe('previousText', function(previousText) {
         if (previousText) {
           scope.params.previousText = previousText;
